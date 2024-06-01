@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart/core/database/cache/cache_helper.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper().init();
+
   runApp(const MyApp());
 }
 
