@@ -75,4 +75,55 @@ abstract class Styles {
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
   );
+
+  static const body1Medium = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w500,
+    height: 1.5,
+    letterSpacing: 0.5,
+  );
+
+  static const body1Regular = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w400,
+    height: 1.5,
+    letterSpacing: 0.5,
+  );
+  static const body2Medium = TextStyle(
+    fontSize: 14.0,
+    fontWeight: FontWeight.w500,
+    height: 1.5,
+    letterSpacing: 0.5,
+  );
+
+  static const body2Regular = TextStyle(
+    fontSize: 14.0,
+    fontWeight: FontWeight.w400,
+    height: 1.5,
+    letterSpacing: 0.5,
+  );
+
+  static const captionSemiBold = TextStyle(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 0.5,
+  );
+
+  static const captionRegular = TextStyle(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0.5,
+  );
+
+  static const overLineSemiBold = TextStyle(
+    fontSize: 10.0,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 1.5,
+  );
+
+  static const overLineRegular = TextStyle(
+    fontSize: 10.0,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 1.5,
+  );
 }
