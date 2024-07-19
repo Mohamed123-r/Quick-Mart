@@ -9,24 +9,44 @@ class CustomSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: Colors.green,
+      textInputAction: TextInputAction.search,
       decoration: InputDecoration(
-
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 40, vertical: 16,),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 16,
+        ),
         prefixIcon: SizedBox(
           width: 40,
-          height:56 ,
+          height: 56,
           child: Center(
             child: SvgPicture.asset(
               Assets.searchIcon,
             ),
           ),
         ),
+        suffixIcon: SizedBox(
+          width: 40,
+          height: 56,
+          child: Center(
+            child: SvgPicture.asset(
+              Assets.filterIcon,
+            ),
+          ),
+        ),
+        hoverColor: Colors.red,
         hintText: 'Search',
-        hintStyle: Styles.captionRegular ,
+        hintStyle: Styles.captionRegular,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: Colors.grey),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Colors.grey),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Colors.green),
         ),
       ),
     );
