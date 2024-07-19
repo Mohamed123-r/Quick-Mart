@@ -5,6 +5,7 @@ const kCyan_50Color = Color(0xFFF4FDFA);
 const kBlackColor = Color(0xFF1C1B1B);
 const kWhiteColor = Color(0xFFFFFFFF);
 const kRedColor = Color(0xFFEE4D4D);
+const kGreenColor = Color(0xFF21D4B4);
 const kBlueColor = Color(0xFF1F88DA);
 const kPurpleColor = Color(0xFF4F1FDA);
 const kYellowColor = Color(0xFFEBEF14);

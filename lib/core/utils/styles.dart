@@ -119,6 +119,7 @@ abstract class Styles {
     fontSize: 10.0,
     fontWeight: FontWeight.w600,
     letterSpacing: 1.5,
+    color: Colors.white
   );
 
   static const overLineRegular = TextStyle(
