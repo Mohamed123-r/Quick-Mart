@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
-import 'package:quick_mart/core/widgets/custom_progress_indicators.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({
