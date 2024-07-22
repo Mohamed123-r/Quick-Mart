@@ -11,19 +11,18 @@ class PrimaryBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: MaterialButton(
-        height: 60,
-        color: kBlackColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        onPressed: onPressed,
-        child: Text(
-          title,
-          style: Styles.button2SemiBold.copyWith(
-            color: kWhiteColor,
-          ),
+    return MaterialButton(
+      height: 60,
+      minWidth: double.infinity,
+      color: kBlackColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      onPressed: onPressed,
+      child: Text(
+        title,
+        style: Styles.button2SemiBold.copyWith(
+          color: kWhiteColor,
         ),
       ),
     );
