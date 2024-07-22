@@ -12,4 +12,5 @@ abstract class Assets {
   static String category2Icon = "assets/images/category2_icon.svg";
   static String shoppingCart2Icon = "assets/images/shopping-cart2_icon.svg";
   static String logo = "assets/images/logo.svg";
+  static String splashImage = "assets/images/splash-image.png";
 }
