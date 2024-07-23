@@ -31,6 +31,10 @@ class _ToastContextState extends State<CustomToast> {
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
+        border: Border.all(
+          color: kGrey_50Color,
+          width: 2,
+        ),
         color: kWhiteColor,
       ),
       child: Row(
@@ -55,10 +59,10 @@ class _ToastContextState extends State<CustomToast> {
     // Custom Toast Position
     fToast.showToast(
         child: toast,
-        toastDuration: const Duration(seconds: 3),
+        toastDuration: const Duration(seconds: 4),
         positionedToastBuilder: (context, child) {
           return Positioned(
-            top: 40.0,
+            top: 35.0,
             child: child,
           );
         });
