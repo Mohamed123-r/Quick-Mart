@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
+import 'package:quick_mart/core/database/cache/cache_helper.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/widgets/custom_buttons.dart';
 import 'package:quick_mart/features/onboarding/presentation/view/widgets/onboarding_bottom_navigation_bar.dart';
@@ -107,13 +109,35 @@ class _OnboardingViewState extends State<OnboardingView>
                         SecondaryBottom(
                           width: (MediaQuery.of(context).size.width - 40) * 0.5,
                           title: 'Login ',
-                          onPressed: () {},
+                          onPressed: () {
+                            CacheHelper()
+                                .saveData(key: "onBoarding", value: true);
+                            Navigator.pushReplacement(
+                              context,
+                              AppRouter.router(
+                                const RouteSettings(
+                                  name: AppRouter.kLogInView,
+                                ),
+                              ),
+                            );
+                          },
                         ),
                         const Spacer(),
                         PrimaryBottom(
                           width: (MediaQuery.of(context).size.width - 40) * 0.5,
                           title: 'Get Started',
-                          onPressed: () {},
+                          onPressed: () {
+                            CacheHelper()
+                                .saveData(key: "onBoarding", value: true);
+                            Navigator.pushReplacement(
+                              context,
+                              AppRouter.router(
+                                const RouteSettings(
+                                  name: AppRouter.kSignUpView,
+                                ),
+                              ),
+                            );
+                          },
                         ),
                       ],
                     )

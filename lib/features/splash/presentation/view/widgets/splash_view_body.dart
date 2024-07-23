@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
+import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_view.dart';
 import 'package:quick_mart/features/home/presentation/view/home_view.dart';
-import 'package:quick_mart/features/login/presentation/view/log_in_view.dart';
 import 'package:quick_mart/features/onboarding/presentation/view/onboarding_view.dart';
 
 class SplashViewBody extends StatelessWidget {
@@ -34,7 +34,7 @@ class SplashViewBody extends StatelessWidget {
       navigator: onBoarding
           ? logInSuccess
               ? const HomeView()
-              : const LogInView()
+              : const SignUpView()
           : const OnboardingView(),
       durationInSeconds: 3,
     );
