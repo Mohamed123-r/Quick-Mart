@@ -16,4 +16,8 @@ abstract class Assets {
   static String onboarding1 = "assets/images/onboarding1.png";
   static String onboarding2 = "assets/images/onboarding2.png";
   static String onboarding3 = "assets/images/onboarding3.png";
+  static String toastSuccessIcon = "assets/images/toast_success.svg";
+  static String toastErrorIcon = "assets/images/toast_error.svg";
+  static String toastWarningIcon = "assets/images/toast_warning.svg";
+  static String toastInfoIcon = "assets/images/toast_info.svg";
 }
