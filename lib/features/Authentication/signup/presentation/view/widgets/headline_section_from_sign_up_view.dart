@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 
-class HeadlineSection extends StatelessWidget {
-  const HeadlineSection({
+class HeadlineSectionFromSignUpView extends StatelessWidget {
+  const HeadlineSectionFromSignUpView({
     super.key,
   });
 

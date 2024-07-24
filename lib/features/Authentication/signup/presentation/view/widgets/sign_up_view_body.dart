@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart/features/Authentication/signup/presentation/view/widgets/call_to_actions_section.dart';
-import 'package:quick_mart/features/Authentication/signup/presentation/view/widgets/headline_section.dart';
-import 'package:quick_mart/features/Authentication/signup/presentation/view/widgets/input_fields_section.dart';
+import 'package:quick_mart/features/Authentication/signup/presentation/view/widgets/call_to_actions_section_from_sign_up_view.dart';
+import 'package:quick_mart/features/Authentication/signup/presentation/view/widgets/headline_section_from_sign_up_view.dart';
+import 'package:quick_mart/features/Authentication/signup/presentation/view/widgets/input_fields_section_from_sign_up_view.dart';
 
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({
@@ -16,15 +16,15 @@ class SignUpViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HeadlineSection(),
+            HeadlineSectionFromSignUpView(),
             SizedBox(
               height: 32,
             ),
-            InputFieldsSection(),
+            InputFieldsSectionFromSignUpView(),
             SizedBox(
               height: 24,
             ),
-            CallToActionsSection(),
+            CallToActionsSectionFromSignUpView(),
           ],
         ),
       ),

@@ -4,8 +4,8 @@ import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/widgets/custom_buttons.dart';
 import 'package:quick_mart/core/widgets/custom_toast.dart';
 
-class CallToActionsSection extends StatelessWidget {
-  const CallToActionsSection({
+class CallToActionsSectionFromSignUpView extends StatelessWidget {
+  const CallToActionsSectionFromSignUpView({
     super.key,
   });
 
