@@ -11,6 +11,7 @@ class HeadlineSectionFromSignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
           "SignUp",
@@ -27,9 +28,9 @@ class HeadlineSectionFromSignUpView extends StatelessWidget {
                 color: kGrey_150Color,
               ),
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
+            GestureDetector(
+              onTap: () {
+                Navigator.pushReplacement(
                   context,
                   AppRouter.router(
                     const RouteSettings(name: AppRouter.kLogInView),
@@ -37,7 +38,7 @@ class HeadlineSectionFromSignUpView extends StatelessWidget {
                 );
               },
               child: Text(
-                "Login",
+                " Login",
                 style: Styles.body2Medium.copyWith(
                   color: kCyanColor,
                 ),

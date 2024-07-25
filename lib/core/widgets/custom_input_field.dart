@@ -15,7 +15,7 @@ class CustomInputField extends StatelessWidget {
 
   final String title;
   final String hintText;
-  final IconData? suffixIcon;
+  final Widget? suffixIcon;
   final bool obscureText;
   final String? Function(String?)? validator;
   final TextEditingController? controller;
@@ -51,6 +51,7 @@ class CustomInputField extends StatelessWidget {
           keyboardType: keyboardType,
           cursorColor: kCyanColor,
           decoration: InputDecoration(
+            suffixIcon: suffixIcon,
             contentPadding: const EdgeInsets.symmetric(
               vertical: 18.0,
               horizontal: 16.0,

@@ -34,10 +34,15 @@ class InputFieldsSectionFromSignUpView extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        const CustomInputField(
+        CustomInputField(
           hintText: 'Enter your Password',
           title: 'Password',
           keyboardType: TextInputType.emailAddress,
+          obscureText: true,
+          suffixIcon: IconButton(
+            icon: const Icon(Icons.visibility),
+            onPressed: () {},
+          ),
           validator: validatorOfPassword,
         ),
       ],
