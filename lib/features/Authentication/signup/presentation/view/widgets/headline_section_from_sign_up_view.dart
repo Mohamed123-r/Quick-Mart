@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 
 class HeadlineSectionFromSignUpView extends StatelessWidget {
@@ -27,7 +28,14 @@ class HeadlineSectionFromSignUpView extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  AppRouter.router(
+                    const RouteSettings(name: AppRouter.kLogInView),
+                  ),
+                );
+              },
               child: Text(
                 "Login",
                 style: Styles.body2Medium.copyWith(
