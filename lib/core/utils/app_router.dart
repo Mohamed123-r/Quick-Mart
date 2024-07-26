@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart/features/Authentication/login/presentation/view/forgot_password_confirmation_email_view.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/log_in_view.dart';
 import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_email_verification.dart';
 import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_view.dart';
@@ -31,6 +32,11 @@ abstract class AppRouter {
       case kLogInView:
         return MaterialPageRoute(builder: (context) {
           return const LogInView(); //replace this Scaffold with a login Screen
+        });
+
+      case kForgetPasswordView:
+        return MaterialPageRoute(builder: (context) {
+          return const ForgotPasswordConfirmationEmailView(); //replace this Scaffold with a login Screen
         });
 
       case kSignUpView:
