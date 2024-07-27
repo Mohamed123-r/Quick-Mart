@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/forgot_password_confirmation_email_view.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/log_in_view.dart';
+import 'package:quick_mart/features/Authentication/login/presentation/view/password_created_successfully_view.dart';
 import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_email_verification.dart';
 import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_view.dart';
 import 'package:quick_mart/features/home/presentation/view/home_view.dart';
@@ -12,8 +13,8 @@ abstract class AppRouter {
   static const kOnBoarding = '/onBoarding';
   static const kLogInView = '/login';
   static const kForgetPasswordView = '/forgetPassword';
-  static const kResetPasswordView = '/resetPassword';
-  static const kCongratulationView = '/congratulation';
+  static const kPasswordCreatedSuccessfullyView =
+      '/passwordCreatedSuccessfully';
   static const kSignUpView = '/signup';
   static const kSignupEmailVerification = '/signupEmailVerification';
   static const kHomeView = '/home';
@@ -37,6 +38,11 @@ abstract class AppRouter {
       case kForgetPasswordView:
         return MaterialPageRoute(builder: (context) {
           return const ForgotPasswordConfirmationEmailView(); //replace this Scaffold with a login Screen
+        });
+
+      case kPasswordCreatedSuccessfullyView:
+        return MaterialPageRoute(builder: (context) {
+          return const PasswordCreatedSuccessfullyView(); //replace this Scaffold with a login Screen
         });
 
       case kSignUpView:
