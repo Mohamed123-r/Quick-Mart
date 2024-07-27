@@ -20,4 +20,6 @@ abstract class Assets {
   static String toastErrorIcon = "assets/images/toast_error.svg";
   static String toastWarningIcon = "assets/images/toast_warning.svg";
   static String toastInfoIcon = "assets/images/toast_info.svg";
+  static String passwordSuccessfully =
+      "assets/images/passwordSuccessfully-image.png";
 }
