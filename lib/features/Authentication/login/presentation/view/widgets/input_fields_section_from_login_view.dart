@@ -21,7 +21,9 @@ class InputFieldsSectionFromLoginView extends StatelessWidget {
         SizedBox(
           height: 16,
         ),
-        CustomPasswordInputField(),
+        CustomPasswordInputField(
+          title: 'Password',
+        ),
       ],
     );
   }

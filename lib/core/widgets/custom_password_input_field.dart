@@ -3,7 +3,9 @@ import 'package:quick_mart/core/function/validator.dart';
 import 'package:quick_mart/core/widgets/custom_input_field.dart';
 
 class CustomPasswordInputField extends StatefulWidget {
-  const CustomPasswordInputField({super.key});
+  const CustomPasswordInputField({super.key, required this.title});
+
+  final String title;
 
   @override
   State<CustomPasswordInputField> createState() =>
@@ -17,7 +19,7 @@ class _CustomPasswordInputFieldState extends State<CustomPasswordInputField> {
   Widget build(BuildContext context) {
     return CustomInputField(
       hintText: 'Enter your Password',
-      title: 'Password',
+      title: widget.title,
       keyboardType: TextInputType.emailAddress,
       obscureText: obscureText,
       suffixIcon: IconButton(
