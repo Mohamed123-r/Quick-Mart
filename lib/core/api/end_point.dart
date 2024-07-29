@@ -1,6 +1,4 @@
 class EndPoint {
-  static String baseUrl =
-      "";
-  static String login = "";
+  static String baseUrl = "https://student.valuxapps.com/api/";
+  static String signUp = "register";
 }
-
