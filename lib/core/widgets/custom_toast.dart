@@ -25,7 +25,7 @@ class CustomToast {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.0),
           border: Border.all(
-            color: kGrey_100Color,
+            color: kGrey_50Color,
             width: 2,
           ),
           color: kGrey_50Color,
