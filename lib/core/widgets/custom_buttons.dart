@@ -4,11 +4,16 @@ import 'package:quick_mart/core/utils/styles.dart';
 
 class PrimaryBottom extends StatelessWidget {
   const PrimaryBottom(
-      {super.key, required this.title, required this.onPressed, this.width});
+      {super.key,
+      required this.title,
+      required this.onPressed,
+      this.width,
+      this.isLoading = false});
 
   final Function() onPressed;
   final String title;
   final double? width;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +25,16 @@ class PrimaryBottom extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       onPressed: onPressed,
-      child: Text(
-        title,
-        style: Styles.button2SemiBold.copyWith(
-          color: kWhiteColor,
-        ),
-      ),
+      child: isLoading
+          ? const CircularProgressIndicator(
+              color: kWhiteColor,
+            )
+          : Text(
+              title,
+              style: Styles.button2SemiBold.copyWith(
+                color: kWhiteColor,
+              ),
+            ),
     );
   }
 }
