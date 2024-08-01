@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/widgets/custom_toast.dart';
 import 'package:quick_mart/features/Authentication/signup/presentation/view/widgets/call_to_actions_section_from_sign_up_view.dart';
@@ -26,6 +27,20 @@ class SignUpViewBody extends StatelessWidget {
             fToast: fToast,
             image: Assets.toastErrorIcon,
             title: state.message.toString(),
+          ).showToast();
+        }
+        if (state is SignUpSuccess) {
+          Navigator.pushReplacement(
+            context,
+            AppRouter.router(
+              const RouteSettings(name: AppRouter.kLogInView),
+            ),
+          );
+          CustomToast(
+            context: context,
+            fToast: fToast,
+            image: Assets.toastSuccessIcon,
+            title: context.read<SignUpCubit>().signUpModel!.message.toString(),
           ).showToast();
         }
       },
