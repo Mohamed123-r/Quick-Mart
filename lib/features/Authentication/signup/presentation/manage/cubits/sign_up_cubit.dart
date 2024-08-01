@@ -31,7 +31,7 @@ class SignUpCubit extends Cubit<SignUpState> {
         ApiKeys.password: signUpPassword.text,
         ApiKeys.image: '',
       });
-      if (response['statusCode'] == 200) {
+      if (response['status'] == true) {
         emit(SignUpSuccess());
         signUpModel = SignUpModel.fromJson(response);
         CacheHelper()
