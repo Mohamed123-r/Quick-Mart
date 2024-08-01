@@ -1,41 +1,89 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart/features/Authentication/login/presentation/view/widgets/call_to_action_section_from_login_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
+import 'package:quick_mart/core/utils/assets.dart';
+import 'package:quick_mart/core/widgets/custom_toast.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/widgets/forgot_password_section_from_login_views.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/widgets/headline_section_from_login_view.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/widgets/input_fields_section_from_login_view.dart';
+import 'package:quick_mart/features/authentication/login/presentation/manage/cubits/log_in_cubit.dart';
+import 'package:quick_mart/features/authentication/login/presentation/view/widgets/call_to_action_section_from_login_view.dart';
 
 class LogInViewBody extends StatelessWidget {
-  const LogInViewBody({super.key});
+  LogInViewBody({super.key});
+
+  final FToast fToast = FToast();
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 16.0,
-      ),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            SizedBox(
-              height: 24,
+    fToast.init(context);
+    return BlocConsumer<LogInCubit, LogInState>(
+      listener: (context, state) {
+        if (state is LogInSuccess) {
+          Navigator.push(
+            context,
+            AppRouter.router(
+              const RouteSettings(
+                name: AppRouter.kHomeView,
+              ),
             ),
-            HeadlineSectionFromLoginView(),
-            SizedBox(
-              height: 32,
+          );
+          CustomToast(
+            context: context,
+            fToast: fToast,
+            image: Assets.toastSuccessIcon,
+            title: context.read<LogInCubit>().logInModel!.message.toString(),
+          ).showToast();
+        }
+        if (state is LogInError) {
+          CustomToast(
+            context: context,
+            fToast: fToast,
+            image: Assets.toastErrorIcon,
+            title: state.message.toString(),
+          ).showToast();
+        }
+      },
+      builder: (context, state) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16.0,
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const SizedBox(
+                  height: 24,
+                ),
+                const HeadlineSectionFromLoginView(),
+                const SizedBox(
+                  height: 32,
+                ),
+                InputFieldsSectionFromLoginView(
+                  emailController: context.read<LogInCubit>().logInEmail,
+                  passwordController: context.read<LogInCubit>().logInPassword,
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                const ForgotPasswordSectionFromLoginViews(),
+                const SizedBox(
+                  height: 24,
+                ),
+                CallToActionSectionFromLoginView(
+                  isLoading: state is LogInLoading ? true : false,
+                  primaryBottom: () {
+                    context.read<LogInCubit>().logIn();
+                  },
+                  secondaryBottom: () {},
+                ),
+              ],
             ),
-            InputFieldsSectionFromLoginView(),
-            SizedBox(
-              height: 24,
-            ),
-            ForgotPasswordSectionFromLoginViews(),
-            SizedBox(
-              height: 24,
-            ),
-            CallToActionSectionFromLoginView(),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
