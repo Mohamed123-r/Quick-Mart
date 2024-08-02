@@ -6,9 +6,10 @@ import 'package:quick_mart/core/widgets/custom_input_field.dart';
 
 class ConfirmationEmailWidget extends StatelessWidget {
   const ConfirmationEmailWidget({
-    super.key,
+    super.key, required this.controller,
   });
 
+   final TextEditingController controller ;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,7 +37,8 @@ class ConfirmationEmailWidget extends StatelessWidget {
             const SizedBox(height: 16),
           ],
         ),
-        const CustomInputField(
+         CustomInputField(
+          controller: controller,
           hintText: 'Enter your Email',
           title: 'Email',
           keyboardType: TextInputType.emailAddress,

@@ -16,7 +16,7 @@ class SendCodeCubit extends Cubit<SendCodeState> {
     emit(SendCodeLoading());
 
     try {
-      var response = await api.post(
+      await api.post(
           "http://ahmedsalah.runasp.net/api/Account/SendNumForEmail?sendEmail=${sendNumEmail.text}");
 
       emit(SendCodeSuccess());
