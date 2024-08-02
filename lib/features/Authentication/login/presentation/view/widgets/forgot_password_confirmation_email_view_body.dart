@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -64,6 +66,32 @@ class _ForgotPasswordConfirmationEmailViewBodyState
             title: 'Code confirmed successfully',
           ).showToast();
         }
+        if (state is ChangePasswordError) {
+          CustomToast(
+            context: context,
+            fToast: fToast,
+            image: Assets.toastErrorIcon,
+            title: ' Error changing password please try again',
+          ).showToast();
+        }
+        if (state is ChangePasswordSuccess) {
+          selectedIndex += 1;
+          CustomToast(
+            context: context,
+            fToast: fToast,
+            image: Assets.toastSuccessIcon,
+            title: 'Password changed successfully',
+          ).showToast();
+          Navigator.push(
+            context,
+            AppRouter.router(
+              const RouteSettings(
+                name: AppRouter.kPasswordCreatedSuccessfullyView,
+              ),
+            ),
+          );
+        }
+        log(selectedIndex);
       },
       builder: (context, state) {
         return Padding(
@@ -78,7 +106,14 @@ class _ForgotPasswordConfirmationEmailViewBodyState
                 EmailVerificationWidget(
                   confirmNum: context.read<ForgotPasswordCubit>().num,
                 ),
-              if (selectedIndex == 3) const NewPasswordWidget(),
+              if (selectedIndex == 3)
+                NewPasswordWidget(
+                  controllerPassword: context
+                      .read<ForgotPasswordCubit>()
+                      .changePasswordPassword,
+                  controllerConfirmPassword:
+                      context.read<ForgotPasswordCubit>().changePasswordConfirm,
+                ),
               const SizedBox(
                 height: 24,
               ),
@@ -97,19 +132,8 @@ class _ForgotPasswordConfirmationEmailViewBodyState
                     context.read<ForgotPasswordCubit>().confirmNum();
                   }
                   if (selectedIndex == 3) {
-                    selectedIndex += 1;
+                    context.read<ForgotPasswordCubit>().changePassword();
                   }
-                  setState(() {
-                    if (selectedIndex == 4) {
-                      Navigator.pushReplacement(
-                        context,
-                        AppRouter.router(
-                          const RouteSettings(
-                              name: AppRouter.kPasswordCreatedSuccessfullyView),
-                        ),
-                      );
-                    }
-                  });
                 },
               ),
             ],
