@@ -5,16 +5,19 @@ import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 
 class CustomToast {
-  const CustomToast(
-      {required this.context,
-      required this.fToast,
-      required this.image,
-      required this.title});
+  const CustomToast({
+    this.spaceBetween = true,
+    required this.context,
+    required this.fToast,
+    required this.image,
+    required this.title,
+  });
 
   final String image;
   final String title;
   final BuildContext context;
   final FToast fToast;
+  final bool spaceBetween;
 
   showToast() {
     Widget toast = Padding(
@@ -31,10 +34,15 @@ class CustomToast {
           color: kGrey_50Color,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: spaceBetween
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.start,
           children: [
             SvgPicture.asset(
               image,
+            ),
+            const SizedBox(
+              width: 12,
             ),
             Text(
               title,

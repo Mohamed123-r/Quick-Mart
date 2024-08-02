@@ -25,15 +25,18 @@ class ForgotPasswordConfirmationEmailView extends StatelessWidget {
           isLarge: true,
           title: "Forgot Password",
         ),
-        body: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Divider(
-              height: 0.5,
-            ),
-            SizedBox(height: 12),
-            ForgotPasswordConfirmationEmailViewBody(),
-          ],
+        body: const SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Divider(
+                height: 0.5,
+              ),
+              SingleChildScrollView(
+                  child: ForgotPasswordConfirmationEmailViewBody()),
+              SizedBox(height: 12),
+            ],
+          ),
         ),
       ),
     );

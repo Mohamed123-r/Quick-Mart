@@ -56,7 +56,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     try {
       await api.post("http://ahmedsalah.runasp.net/api/Account/ChangePassword",
           data: {
-            ApiKeys.email: changePasswordEmail.text,
+            ApiKeys.email: sendNumEmail.text,
             ApiKeys.password: changePasswordPassword.text,
             ApiKeys.confirmPassword: changePasswordConfirm.text
           });
