@@ -5,7 +5,10 @@ import 'package:quick_mart/core/utils/styles.dart';
 class CustomDigits extends StatefulWidget {
   const CustomDigits({
     super.key,
+    required this.controller,
   });
+
+  final TextEditingController controller;
 
   @override
   State<CustomDigits> createState() => _CustomDigitsState();
@@ -20,6 +23,7 @@ class _CustomDigitsState extends State<CustomDigits> {
       height: 48,
       width: 48,
       child: TextFormField(
+          controller: widget.controller,
           keyboardType: null,
           maxLines: 1,
           cursorColor: kGreenColor,

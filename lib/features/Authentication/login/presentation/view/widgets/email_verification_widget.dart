@@ -6,7 +6,10 @@ import 'package:quick_mart/core/widgets/custom_digits.dart';
 class EmailVerificationWidget extends StatelessWidget {
   const EmailVerificationWidget({
     super.key,
+    required this.confirmNum,
   });
+
+  final List<TextEditingController> confirmNum;
 
   @override
   Widget build(BuildContext context) {
@@ -34,17 +37,29 @@ class EmailVerificationWidget extends StatelessWidget {
             const SizedBox(height: 16),
           ],
         ),
-        const Column(
+        Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CustomDigits(),
-                CustomDigits(),
-                CustomDigits(),
-                CustomDigits(),
-                CustomDigits(),
-                CustomDigits(),
+                CustomDigits(
+                  controller: confirmNum[0],
+                ),
+                CustomDigits(
+                  controller: confirmNum[1],
+                ),
+                CustomDigits(
+                  controller: confirmNum[2],
+                ),
+                CustomDigits(
+                  controller: confirmNum[3],
+                ),
+                CustomDigits(
+                  controller: confirmNum[4],
+                ),
+                CustomDigits(
+                  controller: confirmNum[5],
+                ),
               ],
             ),
           ],

@@ -5,7 +5,7 @@ import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/api/dio_consumer.dart';
 import 'package:quick_mart/core/widgets/custom_app_bar.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/widgets/forgot_password_confirmation_email_view_body.dart';
-import 'package:quick_mart/features/authentication/login/presentation/manage/cubits/send_num_cubit.dart';
+import 'package:quick_mart/features/authentication/login/presentation/manage/cubits/forgot_password_cubit.dart';
 
 class ForgotPasswordConfirmationEmailView extends StatelessWidget {
   const ForgotPasswordConfirmationEmailView({super.key});
@@ -13,7 +13,7 @@ class ForgotPasswordConfirmationEmailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SendCodeCubit(
+      create: (context) => ForgotPasswordCubit(
         DioConsumer(
           dio: Dio(),
         ),
