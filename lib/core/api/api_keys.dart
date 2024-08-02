@@ -9,4 +9,5 @@ class ApiKeys {
   static String image = "image";
   static String email = "email";
   static String password = "password";
+  static String confirmPassword = "confirmPassword";
 }
