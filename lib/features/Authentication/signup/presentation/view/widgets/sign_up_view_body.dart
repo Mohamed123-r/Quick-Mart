@@ -46,21 +46,28 @@ class SignUpViewBody extends StatelessWidget {
       },
       builder: (context, state) {
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16.0,
+          ),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(
+                  height: 24,
+                ),
                 const HeadlineSectionFromSignUpView(),
                 const SizedBox(
                   height: 32,
                 ),
                 InputFieldsSectionFromSignUpView(
                   nameController: context.read<SignUpCubit>().signUpName,
-                  phoneController: context.read<SignUpCubit>().signUpPhone,
                   emailController: context.read<SignUpCubit>().signUpEmail,
+                  phoneController: context.read<SignUpCubit>().signUpPhone,
                   passwordController:
                       context.read<SignUpCubit>().signUpPassword,
+                  confirmPasswordController:
+                      context.read<SignUpCubit>().signUpPasswordConfirm,
                 ),
                 const SizedBox(
                   height: 24,

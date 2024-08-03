@@ -10,11 +10,13 @@ class InputFieldsSectionFromSignUpView extends StatelessWidget {
     required this.emailController,
     required this.passwordController,
     required this.phoneController,
+    required this.confirmPasswordController,
   });
 
   final TextEditingController nameController;
   final TextEditingController emailController;
   final TextEditingController passwordController;
+  final TextEditingController confirmPasswordController;
   final TextEditingController phoneController;
 
   @override
@@ -26,12 +28,7 @@ class InputFieldsSectionFromSignUpView extends StatelessWidget {
           hintText: 'Enter your Name',
           title: 'Full Name',
           keyboardType: TextInputType.text,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter the name';
-            }
-            return null;
-          },
+          validator: validatorOfName,
         ),
         const SizedBox(
           height: 16,
@@ -41,18 +38,7 @@ class InputFieldsSectionFromSignUpView extends StatelessWidget {
           hintText: 'Enter your Phone Number',
           title: 'Phone Number',
           keyboardType: TextInputType.number,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter the phone number';
-            }
-            if (value.length != 11) {
-              return 'Please enter a valid phone number';
-            }
-            if (!value.startsWith('01')) {
-              return 'Please enter a valid phone number';
-            }
-            return null;
-          },
+          validator: validatorOfPhoneNumber,
         ),
         const SizedBox(
           height: 16,
@@ -70,6 +56,13 @@ class InputFieldsSectionFromSignUpView extends StatelessWidget {
         CustomPasswordInputField(
           title: 'Password',
           controller: passwordController,
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        CustomPasswordInputField(
+          title: 'Confirm Password',
+          controller: confirmPasswordController,
         ),
       ],
     );

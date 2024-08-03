@@ -2,7 +2,6 @@ import "package:bloc/bloc.dart" show Cubit;
 import 'package:flutter/material.dart';
 import 'package:quick_mart/core/api/api_consumer.dart';
 import 'package:quick_mart/core/api/api_keys.dart';
-import 'package:quick_mart/core/api/end_point.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
 import 'package:quick_mart/core/errors/exceptions.dart';
 import 'package:quick_mart/features/authentication/signup/data/models/sign_up_model.dart';
@@ -20,22 +19,24 @@ class SignUpCubit extends Cubit<SignUpState> {
   TextEditingController signUpPhone = TextEditingController();
   TextEditingController signUpEmail = TextEditingController();
   TextEditingController signUpPassword = TextEditingController();
+  TextEditingController signUpPasswordConfirm = TextEditingController();
 
   signUp() async {
     emit(SignUpLoading());
     try {
-      final response = await api.post(EndPoint.signUp, data: {
-        ApiKeys.name: signUpName.text,
-        ApiKeys.phone: signUpPhone.text,
+      final response = await api
+          .post('http://ahmedsalah.runasp.net/api/Account/Register', data: {
+        ApiKeys.username: signUpName.text,
+        ApiKeys.phoneNumber: signUpPhone.text,
         ApiKeys.email: signUpEmail.text,
         ApiKeys.password: signUpPassword.text,
-        ApiKeys.image: '',
+        ApiKeys.confirmPassword: signUpPassword.text
       });
-      if (response['status'] == true) {
+      if (response['statusCode'] == 200) {
         emit(SignUpSuccess());
         signUpModel = SignUpModel.fromJson(response);
         CacheHelper()
-            .saveData(key: ApiKeys.email, value: signUpModel?.data?.email);
+            .saveData(key: 'signUpEmail', value: signUpModel?.data?.email);
         CacheHelper()
             .saveData(key: ApiKeys.token, value: signUpModel?.data?.token);
         CacheHelper().saveData(key: ApiKeys.id, value: signUpModel?.data?.id);
