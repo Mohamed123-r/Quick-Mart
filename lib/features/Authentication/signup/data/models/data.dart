@@ -1,34 +1,34 @@
 class Data {
   Data({
-      this.name, 
-      this.phone, 
-      this.email, 
+      this.isAuthenticated, 
       this.id, 
-      this.image, 
+      this.email, 
+      this.username, 
+      this.phoneNumber, 
       this.token,});
 
   Data.fromJson(dynamic json) {
-    name = json['name'];
-    phone = json['phone'];
-    email = json['email'];
+    isAuthenticated = json['isAuthenticated'];
     id = json['id'];
-    image = json['image'];
+    email = json['email'];
+    username = json['username'];
+    phoneNumber = json['phoneNumber'];
     token = json['token'];
   }
-  String? name;
-  String? phone;
+  bool? isAuthenticated;
+  String? id;
   String? email;
-  num? id;
-  String? image;
+  String? username;
+  String? phoneNumber;
   String? token;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['name'] = name;
-    map['phone'] = phone;
-    map['email'] = email;
+    map['isAuthenticated'] = isAuthenticated;
     map['id'] = id;
-    map['image'] = image;
+    map['email'] = email;
+    map['username'] = username;
+    map['phoneNumber'] = phoneNumber;
     map['token'] = token;
     return map;
   }
