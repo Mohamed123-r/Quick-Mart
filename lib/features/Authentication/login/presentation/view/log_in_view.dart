@@ -22,6 +22,7 @@ class LogInView extends StatelessWidget {
         backgroundColor: kWhiteColor,
         appBar: AppBar(
           backgroundColor: kWhiteColor,
+          surfaceTintColor: kWhiteColor,
           title: const LogoOfApp(),
         ),
         body: LogInViewBody(),

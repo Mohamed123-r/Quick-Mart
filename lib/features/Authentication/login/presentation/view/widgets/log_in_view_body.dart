@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:quick_mart/core/database/cache/cache_helper.dart';
 import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/widgets/custom_toast.dart';
@@ -21,7 +22,7 @@ class LogInViewBody extends StatelessWidget {
     return BlocConsumer<LogInCubit, LogInState>(
       listener: (context, state) {
         if (state is LogInSuccess) {
-          Navigator.push(
+          Navigator.pushReplacement(
             context,
             AppRouter.router(
               const RouteSettings(
@@ -35,6 +36,7 @@ class LogInViewBody extends StatelessWidget {
             image: Assets.toastSuccessIcon,
             title: context.read<LogInCubit>().logInModel!.message.toString(),
           ).showToast();
+          CacheHelper().saveData(key: 'logInSuccess', value: true);
         }
         if (state is LogInError) {
           CustomToast(

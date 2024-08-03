@@ -24,7 +24,7 @@ class ForgotPasswordConfirmationEmailViewBody extends StatefulWidget {
 class _ForgotPasswordConfirmationEmailViewBodyState
     extends State<ForgotPasswordConfirmationEmailViewBody> {
   int selectedIndex = 1;
-  final bool isLoading = false;
+
   final FToast fToast = FToast();
 
   @override
@@ -118,7 +118,11 @@ class _ForgotPasswordConfirmationEmailViewBodyState
                 height: 24,
               ),
               PrimaryBottom(
-                isLoading: isLoading,
+                isLoading: state is ChangePasswordLoading ||
+                        state is SendCodeLoading ||
+                        state is ConfirmNumLoading
+                    ? true
+                    : false,
                 title: selectedIndex == 1
                     ? 'Send Code'
                     : selectedIndex == 2
