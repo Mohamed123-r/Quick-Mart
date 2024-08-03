@@ -27,3 +27,25 @@ String? validatorOfPassword(String? value) {
     }
   }
 }
+
+String? validatorOfPhoneNumber(String? value) {
+  if (value == null || value.isEmpty) {
+    return "Please enter Phone Number";
+  } else if (value.length != 11) {
+    return 'Please enter a valid phone number with 11 digits';
+  } else if (value.contains(RegExp(r'^[0-9]+$'))) {
+    return null;
+  } else {
+    return "Please enter a valid phone number";
+  }
+}
+
+String? validatorOfName(String? value) {
+  if (value == null || value.isEmpty) {
+    return "Please enter Name";
+  } else if (value.contains(RegExp(r'^[a-zA-Z]+$'))) {
+    return null;
+  } else {
+    return "Please enter a valid name with only letters";
+  }
+}
