@@ -2,7 +2,6 @@ import "package:bloc/bloc.dart" show Cubit;
 import 'package:flutter/material.dart';
 import 'package:quick_mart/core/api/api_consumer.dart';
 import 'package:quick_mart/core/api/api_keys.dart';
-import 'package:quick_mart/core/api/end_point.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
 import 'package:quick_mart/core/errors/exceptions.dart';
 import 'package:quick_mart/features/authentication/login/data/models/log_in_model.dart';
@@ -22,11 +21,11 @@ class LogInCubit extends Cubit<LogInState> {
   logIn() async {
     emit(LogInLoading());
     try {
-      final response = await api.post(EndPoint.login, data: {
+      final response = await api.post('http://ahmedsalah.runasp.net/api/Account/Login', data: {
         ApiKeys.email: logInEmail.text,
         ApiKeys.password: logInPassword.text,
       });
-      if (response['status'] == true) {
+      if (response['statusCode'] == 200) {
         emit(LogInSuccess());
         logInModel = LogInModel.fromJson(response);
         CacheHelper()
