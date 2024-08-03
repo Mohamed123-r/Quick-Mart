@@ -2,28 +2,31 @@ import 'data.dart';
 
 class LogInModel {
   LogInModel({
-    this.status,
-    this.message,
-    this.data,
-  });
+      this.statusCode, 
+      this.isSuccess, 
+      this.message, 
+      this.data,});
 
   LogInModel.fromJson(dynamic json) {
-    status = json['status'];
+    statusCode = json['statusCode'];
+    isSuccess = json['isSuccess'];
     message = json['message'];
     data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
-
-  bool? status;
+  num? statusCode;
+  bool? isSuccess;
   String? message;
   Data? data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['status'] = status;
+    map['statusCode'] = statusCode;
+    map['isSuccess'] = isSuccess;
     map['message'] = message;
     if (data != null) {
       map['data'] = data?.toJson();
     }
     return map;
   }
+
 }
