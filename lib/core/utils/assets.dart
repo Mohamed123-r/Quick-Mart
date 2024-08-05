@@ -22,4 +22,5 @@ abstract class Assets {
   static String toastInfoIcon = "assets/images/toast_info.svg";
   static String passwordSuccessfully =
       "assets/images/passwordSuccessfully-image.png";
+  static String productTest = "assets/images/product_test.png";
 }
