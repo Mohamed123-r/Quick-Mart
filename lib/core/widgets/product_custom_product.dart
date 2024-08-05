@@ -54,7 +54,6 @@ class ProductCustomProduct extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 8),
-        const SizedBox(height: 8),
         const Text(
           "Product Name",
           style: Styles.body2Medium,
