@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:quick_mart/constants.dart';
-import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 
 class ProductCustomCategory extends StatelessWidget {
   const ProductCustomCategory({
     super.key,
     this.isSmall = false,
+    required this.title,
+    required this.icon,
   });
 
   final bool isSmall;
+  final String title;
+
+  final String icon;
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +33,12 @@ class ProductCustomCategory extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SvgPicture.asset(
-              Assets.category2Icon,
+              icon,
               height: isSmall ? 30 : 40,
               width: isSmall ? 60 : 140,
             ),
             Text(
-              "Custom",
+              title,
               style: isSmall ? Styles.overLineSemiBold : Styles.captionSemiBold,
             ),
           ],
