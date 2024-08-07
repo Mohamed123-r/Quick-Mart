@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/widgets/product_custom_category.dart';
 
@@ -19,7 +20,14 @@ class CategoriesViewBody extends StatelessWidget {
         children: List.generate(
           10,
           (index) => InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                AppRouter.router(
+                  const RouteSettings(name: AppRouter.kSubCategoriesView),
+                ),
+              );
+            },
             borderRadius: BorderRadius.circular(16),
             child: ProductCustomCategory(
               title: ' Electronics',
