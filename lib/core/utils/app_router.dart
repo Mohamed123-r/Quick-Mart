@@ -4,6 +4,7 @@ import 'package:quick_mart/features/Authentication/login/presentation/view/log_i
 import 'package:quick_mart/features/Authentication/login/presentation/view/password_created_successfully_view.dart';
 import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_email_verification.dart';
 import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_view.dart';
+import 'package:quick_mart/features/home/presentation/view/categories_view.dart';
 import 'package:quick_mart/features/home/presentation/view/home_view.dart';
 import 'package:quick_mart/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:quick_mart/features/splash/presentation/view/splash_view.dart';
@@ -18,6 +19,7 @@ abstract class AppRouter {
   static const kSignUpView = '/signup';
   static const kSignupEmailVerification = '/signupEmailVerification';
   static const kHomeView = '/home';
+  static const kCategoriesView = '/categories';
 
   static Route<Object?> router(RouteSettings settings) {
     switch (settings.name) {
@@ -58,6 +60,11 @@ abstract class AppRouter {
       case kHomeView:
         return MaterialPageRoute(builder: (context) {
           return const HomeView(); //replace this Scaffold with a login Screen
+        });
+
+      case kCategoriesView:
+        return MaterialPageRoute(builder: (context) {
+          return const CategoriesView(); //replace this Scaffold with a login Screen
         });
 
       default:
