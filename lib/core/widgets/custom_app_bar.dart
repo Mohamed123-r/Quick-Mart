@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 
-customAppBar({isLarge = false, String? title, required BuildContext context}) =>
+customAppBar(
+        {List<Widget>? actions,
+        bool isLarge = false,
+        String? title,
+        required BuildContext context}) =>
     AppBar(
       backgroundColor: kWhiteColor,
       leading: IconButton(
@@ -19,4 +23,5 @@ customAppBar({isLarge = false, String? title, required BuildContext context}) =>
         title ?? "",
         style: Styles.body2Medium,
       ),
+      actions: actions,
     );
