@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/core/widgets/custom_app_bar.dart';
+import 'package:quick_mart/features/home/presentation/view/widgets/product_listing_view_body.dart';
 
 class ProductListingView extends StatelessWidget {
   const ProductListingView({super.key});
@@ -17,6 +18,7 @@ class ProductListingView extends StatelessWidget {
           ),
         ],
       ),
+      body: const ProductListingViewBody(),
     );
   }
 }
