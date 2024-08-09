@@ -21,6 +21,7 @@ class ProductCustomProduct extends StatelessWidget {
             ),
             child: Image.asset(
               Assets.productTest,
+              fit: BoxFit.fill,
             ),
           ),
           const Positioned(
