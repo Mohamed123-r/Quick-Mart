@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 
@@ -19,7 +20,16 @@ class SubCategoriesViewBody extends StatelessWidget {
         children: List.generate(
           10,
           (index) => InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  AppRouter.router(
+                    const RouteSettings(
+                      name: AppRouter.kProductListingView,
+                    ),
+                  ),
+                );
+              },
               borderRadius: BorderRadius.circular(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
