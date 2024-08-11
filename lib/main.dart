@@ -1,7 +1,11 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/constants.dart';
+import 'package:quick_mart/core/api/dio_consumer.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
+import 'package:quick_mart/features/home/presentation/manage/cubits/home_cubit.dart';
 import 'package:quick_mart/features/splash/presentation/view/splash_view.dart';
 
 Future<void> main() async {
@@ -23,9 +27,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashView(),
+    return BlocProvider(
+      create: (context) => HomeCubit(
+        DioConsumer(
+          dio: Dio(),
+        ),
+      ),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SplashView(),
+      ),
     );
   }
 }
