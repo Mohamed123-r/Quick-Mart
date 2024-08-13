@@ -1,4 +1,4 @@
-import 'data.dart';
+import 'data_home.dart';
 
 class HomeModel {
   HomeModel({
@@ -15,7 +15,7 @@ class HomeModel {
 
   bool? status;
   dynamic message;
-  Data? data;
+  DataHome? data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

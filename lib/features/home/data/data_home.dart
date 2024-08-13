@@ -1,31 +1,31 @@
-import 'banners.dart';
-import 'products.dart';
+import 'banners_home.dart';
+import 'products_home.dart';
 
-class Data {
-  Data({
+class DataHome {
+  DataHome({
     this.banners,
     this.products,
     this.ad,
   });
 
-  Data.fromJson(dynamic json) {
+  DataHome.fromJson(dynamic json) {
     if (json['banners'] != null) {
       banners = [];
       json['banners'].forEach((v) {
-        banners?.add(Banners.fromJson(v));
+        banners?.add(BannersHome.fromJson(v));
       });
     }
     if (json['products'] != null) {
       products = [];
       json['products'].forEach((v) {
-        products?.add(Products.fromJson(v));
+        products?.add(ProductsHome.fromJson(v));
       });
     }
     ad = json['ad'];
   }
 
-  List<Banners>? banners;
-  List<Products>? products;
+  List<BannersHome>? banners;
+  List<ProductsHome>? products;
   String? ad;
 
   Map<String, dynamic> toJson() {

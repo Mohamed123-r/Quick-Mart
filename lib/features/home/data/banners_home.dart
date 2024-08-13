@@ -1,12 +1,12 @@
-class Banners {
-  Banners({
+class BannersHome {
+  BannersHome({
     this.id,
     this.image,
     this.category,
     this.product,
   });
 
-  Banners.fromJson(dynamic json) {
+  BannersHome.fromJson(dynamic json) {
     id = json['id'];
     image = json['image'];
     category = json['category'];
