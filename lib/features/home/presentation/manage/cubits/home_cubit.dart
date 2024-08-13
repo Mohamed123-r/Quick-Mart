@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:quick_mart/core/api/api_consumer.dart';
 import 'package:quick_mart/core/api/end_point.dart';
-import 'package:quick_mart/features/home/data/Home_model.dart';
+import 'package:quick_mart/features/home/data/home_model.dart';
 
 part 'home_state.dart';
 
