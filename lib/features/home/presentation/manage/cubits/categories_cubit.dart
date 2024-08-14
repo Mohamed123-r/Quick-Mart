@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:quick_mart/core/api/api_consumer.dart';
@@ -12,22 +10,19 @@ class CategoriesCubit extends Cubit<CategoriesState> {
   CategoriesCubit(this.api) : super(CategoriesInitial());
   final ApiConsumer api;
 
-  Map<String, dynamic> data = {};
-  List? categoriesNames;
-
   getCategories() async {
     emit(CategoriesLoading());
 
     try {
       Map<String, dynamic> response = await api.get(EndPoint.categories);
-      log(response.toString());
 
       for (int i = 0; i < response['data']['data'].length; i++) {
-        data.addAll(response['data']['data'][i]);
-        categoriesNames!.add(response['data']['data'][i]['name']);
+        dataOfCategories.add(response['data']['data'][i]);
       }
-      log(data.toString());
-      log(categoriesNames.toString());
+
+      emit(
+        CategoriesSuccess(),
+      );
     } on ServerException catch (e) {
       emit(
         CategoriesFailed(e.errorModel.message!),
@@ -35,3 +30,5 @@ class CategoriesCubit extends Cubit<CategoriesState> {
     }
   }
 }
+
+List<Map<String, dynamic>> dataOfCategories = [];
