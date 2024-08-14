@@ -1,5 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 
@@ -32,10 +32,11 @@ class ProductCustomCategory extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SvgPicture.asset(
+            Image.network(
               icon,
-              height: isSmall ? 30 : 40,
-              width: isSmall ? 60 : 140,
+              height: isSmall ? 30 : 50,
+              width: isSmall ? 40 : 80,
+              fit: BoxFit.cover,
             ),
             Text(
               title,
