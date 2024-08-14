@@ -34,9 +34,11 @@ class ProductCustomCategory extends StatelessWidget {
           children: [
             Image.network(
               icon,
-              height: isSmall ? 30 : 50,
+              height: isSmall ? 30 : 60,
               width: isSmall ? 40 : 80,
-              fit: BoxFit.cover,
+            ),
+            const SizedBox(
+              height: 8,
             ),
             Text(
               title,
