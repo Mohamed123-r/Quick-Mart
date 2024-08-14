@@ -7,4 +7,5 @@ class EndPoint {
   static String changePassword = "ChangePassword";
   static String confirmNum = "ConfirmNum";
   static String home = "home";
+  static String categories = "categories";
 }
