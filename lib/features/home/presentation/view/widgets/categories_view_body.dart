@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/widgets/product_custom_category.dart';
-import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit.dart';
+import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit/categories_cubit.dart';
 
 class CategoriesViewBody extends StatelessWidget {
   const CategoriesViewBody({

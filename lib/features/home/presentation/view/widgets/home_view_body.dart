@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/core/utils/app_router.dart';
-import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit.dart';
+import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit/categories_cubit.dart';
 import 'package:quick_mart/features/home/presentation/view/widgets/banner_section_from_home_view.dart';
 import 'package:quick_mart/features/home/presentation/view/widgets/categories_section_from_home_view.dart';
 import 'package:quick_mart/features/home/presentation/view/widgets/products_section_from_home_view.dart';
@@ -30,6 +30,7 @@ class HomeViewBody extends StatelessWidget {
                     CategoriesSectionFromHomeView(
                       onTapOfSeeAll: () {
                         context.read<CategoriesCubit>().getCategories();
+
                         Navigator.push(
                           context,
                           AppRouter.router(
@@ -37,6 +38,7 @@ class HomeViewBody extends StatelessWidget {
                                 name: AppRouter.kCategoriesView),
                           ),
                         );
+                        dataOfCategories = [];
                       },
                     ),
                     const SizedBox(

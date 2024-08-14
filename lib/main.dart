@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/api/dio_consumer.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
-import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit.dart';
+import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit/categories_cubit.dart';
 import 'package:quick_mart/features/splash/presentation/view/splash_view.dart';
 
 Future<void> main() async {
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           dio: Dio(),
         ),
       ),
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SplashView(),
       ),
