@@ -13,7 +13,6 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CategoriesCubit, CategoriesState>(
       builder: (context, state) {
-        context.read<CategoriesCubit>().getCategories();
         return SingleChildScrollView(
           child: Column(
             children: [
@@ -30,6 +29,7 @@ class HomeViewBody extends StatelessWidget {
                   children: [
                     CategoriesSectionFromHomeView(
                       onTapOfSeeAll: () {
+                        context.read<CategoriesCubit>().getCategories();
                         Navigator.push(
                           context,
                           AppRouter.router(
