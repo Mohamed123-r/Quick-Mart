@@ -8,4 +8,5 @@ class EndPoint {
   static String confirmNum = "ConfirmNum";
   static String home = "home";
   static String categories = "categories";
+  static String categoriesDetails = "categories/";
 }
