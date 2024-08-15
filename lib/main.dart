@@ -6,6 +6,7 @@ import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/api/dio_consumer.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit/categories_cubit.dart';
+import 'package:quick_mart/features/home/presentation/manage/cubits/categories_details_cubit/category_details_cubit.dart';
 import 'package:quick_mart/features/splash/presentation/view/splash_view.dart';
 
 Future<void> main() async {
@@ -27,12 +28,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CategoriesCubit(
-        DioConsumer(
-          dio: Dio(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => CategoriesCubit(
+            DioConsumer(
+              dio: Dio(),
+            ),
+          ),
         ),
-      ),
+        BlocProvider(
+          create: (context) => CategoryDetailsCubit(
+            DioConsumer(
+              dio: Dio(),
+            ),
+          ),
+        ),
+      ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SplashView(),
