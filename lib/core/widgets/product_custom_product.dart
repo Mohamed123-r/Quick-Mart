@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
-import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/product_custom_colors.dart';
 import 'package:quick_mart/core/widgets/product_custom_wishlist.dart';
 
 class ProductCustomProduct extends StatelessWidget {
-  const ProductCustomProduct({super.key});
+  const ProductCustomProduct(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.price,
+      required this.oldPrice});
+
+  final String image;
+
+  final String title;
+
+  final num price;
+
+  final num oldPrice;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +31,12 @@ class ProductCustomProduct extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
             ),
-            child: Image.asset(
-              Assets.productTest,
-              fit: BoxFit.fill,
+            child: Center(
+              child: Image.network(
+                image,
+                height: 150,
+                fit: BoxFit.fill,
+              ),
             ),
           ),
           const Positioned(
@@ -55,16 +70,18 @@ class ProductCustomProduct extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 8),
-        const Text(
-          "Product Name",
+        Text(
+          title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: Styles.body2Medium,
         ),
-        const Text(
-          "\$ 19.99",
+        Text(
+          price.toString(),
           style: Styles.captionSemiBold,
         ),
         Text(
-          "\$ 19.99",
+          oldPrice.toString(),
           style: Styles.overLineRegular.copyWith(
             color: kGrey_150Color,
             decoration: TextDecoration.lineThrough,

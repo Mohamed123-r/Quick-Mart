@@ -43,7 +43,7 @@ class CategoriesViewBody extends StatelessWidget {
                               context,
                               AppRouter.router(
                                 const RouteSettings(
-                                    name: AppRouter.kSubCategoriesView),
+                                    name: AppRouter.kProductListingView),
                               ),
                             );
                             dataOfCategoriesDetails = [];
