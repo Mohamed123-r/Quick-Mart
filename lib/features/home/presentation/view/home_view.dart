@@ -13,7 +13,6 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: kWhiteColor,
-          surfaceTintColor: kWhiteColor,
           title: const LogoOfApp(),
           actions: [
             GestureDetector(

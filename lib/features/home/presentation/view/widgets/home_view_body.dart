@@ -11,49 +11,42 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoriesCubit, CategoriesState>(
-      builder: (context, state) {
-        return SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 16,
-              ),
-              const BannerSectionFromHomeView(),
-              const SizedBox(
-                height: 36,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  children: [
-                    CategoriesSectionFromHomeView(
-                      onTapOfSeeAll: () {
-                        context.read<CategoriesCubit>().getCategories();
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 16,
+          ),
+          const BannerSectionFromHomeView(),
+          const SizedBox(
+            height: 36,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              children: [
+                CategoriesSectionFromHomeView(
+                  onTapOfSeeAll: () {
+                    context.read<CategoriesCubit>().getCategories();
 
-                        Navigator.push(
-                          context,
-                          AppRouter.router(
-                            const RouteSettings(
-                                name: AppRouter.kCategoriesView),
+                    Navigator.push(
+                      context,
+                      AppRouter.router(
+                        const RouteSettings(name: AppRouter.kCategoriesView),
                           ),
                         );
                         dataOfCategories = [];
                       },
                     ),
                     const SizedBox(
-                      height: 24,
-                    ),
-                    ProductsSectionFromHomeView(
-                      onTapOfSeeAll: () {},
-                    ),
-                  ],
+                  height: 24,
+                ),
+                const ProductsSectionFromHomeView(),
+              ],
                 ),
               ),
             ],
           ),
         );
-      },
-    );
   }
 }
