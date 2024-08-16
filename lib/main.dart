@@ -7,6 +7,7 @@ import 'package:quick_mart/core/api/dio_consumer.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit/categories_cubit.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/categories_details_cubit/category_details_cubit.dart';
+import 'package:quick_mart/features/home/presentation/manage/cubits/home_cubit/home_cubit.dart';
 import 'package:quick_mart/features/splash/presentation/view/splash_view.dart';
 
 Future<void> main() async {
@@ -31,11 +32,18 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
+          create: (context) => HomeCubit(
+            DioConsumer(
+              dio: Dio(),
+            ),
+          )..getHomeData(),
+        ),
+        BlocProvider(
           create: (context) => CategoriesCubit(
             DioConsumer(
               dio: Dio(),
             ),
-          ),
+          )..getCategories(),
         ),
         BlocProvider(
           create: (context) => CategoryDetailsCubit(
