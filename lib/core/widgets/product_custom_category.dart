@@ -42,6 +42,8 @@ class ProductCustomCategory extends StatelessWidget {
             ),
             Text(
               title,
+              maxLines: isSmall ? 1 : null,
+              overflow: isSmall ? TextOverflow.ellipsis : null,
               style: isSmall ? Styles.overLineSemiBold : Styles.captionSemiBold,
             ),
           ],
