@@ -9,6 +9,7 @@ import 'package:quick_mart/features/home/presentation/view/home_view.dart';
 import 'package:quick_mart/features/home/presentation/view/product_listing_view.dart';
 import 'package:quick_mart/features/home/presentation/view/sub_categories_view.dart';
 import 'package:quick_mart/features/onboarding/presentation/view/onboarding_view.dart';
+import 'package:quick_mart/features/search/presentation/view/search_view.dart';
 import 'package:quick_mart/features/splash/presentation/view/splash_view.dart';
 
 abstract class AppRouter {
@@ -24,6 +25,7 @@ abstract class AppRouter {
   static const kCategoriesView = '/categories';
   static const kSubCategoriesView = '/subCategoriesView';
   static const kProductListingView = '/productListingView';
+  static const kSearchProductView = '/searchProductView';
 
   static Route<Object?> router(RouteSettings settings) {
     switch (settings.name) {
@@ -81,6 +83,10 @@ abstract class AppRouter {
           return const ProductListingView(); //replace this Scaffold with a login Screen
         });
 
+      case kSearchProductView:
+        return MaterialPageRoute(builder: (context) {
+          return const SearchView(); //replace this Scaffold with a login Screen
+        });
       default:
         return MaterialPageRoute(builder: (context) {
           return const Scaffold(
