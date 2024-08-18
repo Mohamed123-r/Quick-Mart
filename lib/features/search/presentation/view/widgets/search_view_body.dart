@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/core/widgets/custom_search.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/home_cubit/home_cubit.dart';
+import 'package:quick_mart/features/search/presentation/view/widgets/bottom_sheet_from_filter.dart';
 import 'package:quick_mart/features/search/presentation/view/widgets/custom_product.dart';
 
 class SearchViewBody extends StatefulWidget {
@@ -37,6 +38,13 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                 }
               }
               setState(() {});
+            },
+            onTapFromSuffixIcon: () {
+              showModalBottomSheet(
+                backgroundColor: Colors.white,
+                context: context,
+                builder: (context) => const BottomSheetFromFilter(),
+              );
             },
           ),
           searchText.isNotEmpty && answerdList.isEmpty
