@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/product_custom_colors.dart';
 import 'package:quick_mart/core/widgets/product_custom_wishlist.dart';
@@ -22,72 +23,82 @@ class ProductCustomProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Stack(children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24),
-            ),
-            child: Center(
-              child: Image.network(
-                image,
-                height: 150,
-                fit: BoxFit.fill,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          AppRouter.router(
+            const RouteSettings(name: AppRouter.kProductDetailView),
+          ),
+        );
+      },
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Center(
+                child: Image.network(
+                  image,
+                  height: 150,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
-          ),
-          const Positioned(
-            top: 8,
-            right: 8,
-            child: ProductCustomWishlist(),
-          ),
-        ]),
-        const SizedBox(height: 8),
-        const Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Positioned(
-              left: 32,
-              child: ProductCustomColors(
-                color: kRedColor,
-                isSelected: false,
+            const Positioned(
+              top: 8,
+              right: 8,
+              child: ProductCustomWishlist(),
+            ),
+          ]),
+          const SizedBox(height: 8),
+          const Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Positioned(
+                left: 32,
+                child: ProductCustomColors(
+                  color: kRedColor,
+                  isSelected: false,
+                ),
               ),
-            ),
-            Positioned(
-              left: 16,
-              child: ProductCustomColors(
-                color: kCyanColor,
-                isSelected: false,
+              Positioned(
+                left: 16,
+                child: ProductCustomColors(
+                  color: kCyanColor,
+                  isSelected: false,
+                ),
               ),
-            ),
-            ProductCustomColors(
-              color: kBlackColor,
-              isSelected: true,
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Text(
-          title,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: Styles.body2Medium,
-        ),
-        Text(
-          price.toString(),
-          style: Styles.captionSemiBold,
-        ),
-        Text(
-          oldPrice.toString(),
-          style: Styles.overLineRegular.copyWith(
-            color: kGrey_150Color,
-            decoration: TextDecoration.lineThrough,
+              ProductCustomColors(
+                color: kBlackColor,
+                isSelected: true,
+              ),
+            ],
           ),
-        ),
-      ],
+          const SizedBox(height: 8),
+          Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: Styles.body2Medium,
+          ),
+          Text(
+            price.toString(),
+            style: Styles.captionSemiBold,
+          ),
+          Text(
+            oldPrice.toString(),
+            style: Styles.overLineRegular.copyWith(
+              color: kGrey_150Color,
+              decoration: TextDecoration.lineThrough,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
