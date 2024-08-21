@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart/core/widgets/product_custom_product.dart';
 
 class CustomProductGridView extends StatelessWidget {
-  const CustomProductGridView({super.key, required this.productsList});
+  const CustomProductGridView(
+      {super.key, required this.productsList, required this.indexProduct});
 
   final List<Map<String, dynamic>> productsList;
+  final List<int> indexProduct;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class CustomProductGridView extends StatelessWidget {
             title: productsList[index]['name'],
             price: productsList[index]['price'],
             oldPrice: productsList[index]['old_price'],
-            index: index,
+            index: indexProduct[index],
           ),
         ),
       ),

@@ -17,6 +17,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
   TextEditingController controller = TextEditingController();
   String searchText = '';
   List<Map<String, dynamic>> answerdList = [];
+  List<int> indexProduct = [];
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +30,14 @@ class _SearchViewBodyState extends State<SearchViewBody> {
             controller: controller,
             onChanged: (text) {
               answerdList.clear();
+              indexProduct.clear();
               searchText = text;
-              for (var product in dataOfHome) {
-                if (product['name']
+              for (var i = 0; i < dataOfHome.length; i++) {
+                if (dataOfHome[i]['name']
                     .toLowerCase()
                     .contains(text.toLowerCase())) {
-                  answerdList.add(product);
+                  answerdList.add(dataOfHome[i]);
+                  indexProduct.add(i);
                 }
               }
               setState(() {});
@@ -56,6 +59,9 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                 )))
               : CustomProductGridView(
                   productsList: answerdList.isEmpty ? dataOfHome : answerdList,
+                  indexProduct: indexProduct.isEmpty
+                      ? List.generate(dataOfHome.length, (index) => index)
+                      : indexProduct,
                 ),
         ],
       ),
