@@ -26,7 +26,7 @@ class LogInViewBody extends StatelessWidget {
             context,
             AppRouter.router(
               const RouteSettings(
-                name: AppRouter.kHomeView,
+                name: AppRouter.kBottomNavigationBar,
               ),
             ),
           );

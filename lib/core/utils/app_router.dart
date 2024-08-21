@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart/core/widgets/custom_bottom_navigation_bar.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/forgot_password_confirmation_email_view.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/log_in_view.dart';
 import 'package:quick_mart/features/Authentication/login/presentation/view/password_created_successfully_view.dart';
@@ -22,6 +23,7 @@ abstract class AppRouter {
       '/passwordCreatedSuccessfully';
   static const kSignUpView = '/signup';
   static const kSignupEmailVerification = '/signupEmailVerification';
+  static const kBottomNavigationBar = '/bottomNavigationBar';
   static const kHomeView = '/home';
   static const kCategoriesView = '/categories';
   static const kSubCategoriesView = '/subCategoriesView';
@@ -63,6 +65,11 @@ abstract class AppRouter {
       case kSignupEmailVerification:
         return MaterialPageRoute(builder: (context) {
           return const SignUpEmailVerificationView(); //replace this Scaffold with a login Screen
+        });
+
+      case kBottomNavigationBar:
+        return MaterialPageRoute(builder: (context) {
+          return const CustomBottomNavigationBar(); //replace this Scaffold with a login Screen
         });
 
       case kHomeView:

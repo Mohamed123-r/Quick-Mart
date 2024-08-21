@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
+import 'package:quick_mart/features/home/presentation/view/categories_view.dart';
+import 'package:quick_mart/features/home/presentation/view/home_view.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({
@@ -74,12 +76,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               ]),
         ),
         body: <Widget>[
-          Container(
-            color: Colors.yellow,
-          ),
-          Container(
-            color: Colors.red,
-          ),
+          const HomeView(),
+          const CategoriesView(),
           Container(
             color: Colors.blueAccent,
           ),
