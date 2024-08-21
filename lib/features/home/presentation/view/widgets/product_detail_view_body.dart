@@ -40,7 +40,7 @@ class ProductDetailViewBody extends StatelessWidget {
                           ),
                       ],
                     ),
-                    const ProductDetailsSectionFromProductDetailView(),
+                    ProductDetailsSectionFromProductDetailView(),
                   ],
                 ),
               );

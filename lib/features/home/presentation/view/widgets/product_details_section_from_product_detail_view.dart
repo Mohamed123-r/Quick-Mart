@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart/core/function/random_list.dart';
+import 'package:quick_mart/core/widgets/custom_badge.dart';
 import 'package:quick_mart/features/home/presentation/view/widgets/section_of_he_name_and_description_from_product_details_view.dart';
 import 'package:quick_mart/features/home/presentation/view/widgets/section_of_the_color_and_quantity_from_product_details_view.dart';
 
 class ProductDetailsSectionFromProductDetailView extends StatelessWidget {
-  const ProductDetailsSectionFromProductDetailView({
+  ProductDetailsSectionFromProductDetailView({
     super.key,
   });
+
+  final List<Widget> answerdList = [
+    const TopRated(),
+    const SaleOff(),
+    const PreOrder(),
+    const FreeShipping(),
+    const LimitedStock(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +26,9 @@ class ProductDetailsSectionFromProductDetailView extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: const Offset(0, -3), // Top shadow
+            spreadRadius: 0,
+            blurRadius: 17,
+            offset: const Offset(0, -13), // Top shadow
           ),
         ],
         borderRadius: const BorderRadius.only(
@@ -26,14 +36,26 @@ class ProductDetailsSectionFromProductDetailView extends StatelessWidget {
           topRight: Radius.circular(32),
         ),
       ),
-      child: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SectionOfTheNameAndDescriptionFromProductDetailsView(),
+            Row(
+              children: [
+                answerdList.randomItem(),
+                const SizedBox(
+                  width: 8,
+                ),
+                answerdList.randomItem(),
+              ],
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            const SectionOfTheNameAndDescriptionFromProductDetailsView(),
             SectionOfTheColorAndQuantityFromProductDetailsView(),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
           ],

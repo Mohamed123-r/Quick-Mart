@@ -13,9 +13,9 @@ class TopRated extends StatelessWidget {
         color: kBlueColor,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: const Text(
+      child: Text(
         "Top Rated",
-        style: Styles.overLineSemiBold
+        style: Styles.overLineSemiBold.copyWith(color: kWhiteColor),
       ),
     );
   }
@@ -31,9 +31,9 @@ class LimitedStock extends StatelessWidget {
         color: kPurpleColor,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: const Text(
-          "Limited Stock",
-          style: Styles.overLineSemiBold
+      child: Text(
+        "Limited Stock",
+        style: Styles.overLineSemiBold.copyWith(color: kWhiteColor),
       ),
     );
   }
@@ -49,9 +49,9 @@ class ExclusiveSale extends StatelessWidget {
         color: kRedColor,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: const Text(
-          "Exclusive Sale",
-          style: Styles.overLineSemiBold
+      child: Text(
+        "Exclusive Sale",
+        style: Styles.overLineSemiBold.copyWith(color: kWhiteColor),
       ),
     );
   }
@@ -67,9 +67,9 @@ class FreeShipping extends StatelessWidget {
         color: kGreenColor,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: const Text(
-          "Free Shipping",
-          style: Styles.overLineSemiBold
+      child: Text(
+        "Free Shipping",
+        style: Styles.overLineSemiBold.copyWith(color: kWhiteColor),
       ),
     );
   }
@@ -85,9 +85,9 @@ class PreOrder extends StatelessWidget {
         color: kOrangeColor,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: const Text(
-          "Pre-Order",
-          style: Styles.overLineSemiBold
+      child: Text(
+        "Pre-Order",
+        style: Styles.overLineSemiBold.copyWith(color: kWhiteColor),
       ),
     );
   }
@@ -103,9 +103,9 @@ class SaleOff extends StatelessWidget {
         color: kBlackColor,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: const Text(
-          "Sale OFF",
-          style: Styles.overLineSemiBold
+      child: Text(
+        "Sale OFF",
+        style: Styles.overLineSemiBold.copyWith(color: kWhiteColor),
       ),
     );
   }
