@@ -9,4 +9,6 @@ class EndPoint {
   static String home = "home";
   static String categories = "categories";
   static String categoriesDetails = "categories/";
+  static String products = "products";
+  static String productsDetails = "products/";
 }
