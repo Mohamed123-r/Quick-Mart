@@ -40,11 +40,15 @@ class ProductCustomCategory extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            Text(
-              title,
-              maxLines: isSmall ? 1 : null,
-              overflow: isSmall ? TextOverflow.ellipsis : null,
-              style: isSmall ? Styles.overLineSemiBold : Styles.captionSemiBold,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: Text(
+                title,
+                maxLines: isSmall ? 1 : null,
+                overflow: isSmall ? TextOverflow.ellipsis : null,
+                style:
+                    isSmall ? Styles.overLineSemiBold : Styles.captionSemiBold,
+              ),
             ),
           ],
         ),
