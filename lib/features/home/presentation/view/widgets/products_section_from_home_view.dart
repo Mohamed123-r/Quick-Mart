@@ -52,6 +52,7 @@ class ProductsSectionFromHomeView extends StatelessWidget {
                     title: dataOfHome[index]['name'],
                     price: dataOfHome[index]['price'],
                     oldPrice: dataOfHome[index]['old_price'],
+                    index: index,
                   ),
                 ),
               )

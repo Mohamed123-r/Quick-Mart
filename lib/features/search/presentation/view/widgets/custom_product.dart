@@ -24,6 +24,7 @@ class CustomProductGridView extends StatelessWidget {
             title: productsList[index]['name'],
             price: productsList[index]['price'],
             oldPrice: productsList[index]['old_price'],
+            index: index,
           ),
         ),
       ),

@@ -35,6 +35,7 @@ class ProductListingViewBody extends StatelessWidget {
                         title: dataOfCategoriesDetails[index]['name'],
                         price: dataOfCategoriesDetails[index]['price'],
                         oldPrice: dataOfCategoriesDetails[index]['old_price'],
+                        index: index,
                       ),
                     ),
                   ),
