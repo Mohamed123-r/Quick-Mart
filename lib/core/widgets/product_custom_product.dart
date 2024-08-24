@@ -84,11 +84,11 @@ class ProductCustomProduct extends StatelessWidget {
             style: Styles.body2Medium,
           ),
           Text(
-            price.toString(),
+            "\$ ${price.toString()}",
             style: Styles.captionSemiBold,
           ),
           Text(
-            oldPrice.toString(),
+            "\$ ${oldPrice.toString()}",
             style: Styles.overLineRegular.copyWith(
               color: kGrey_150Color,
               decoration: TextDecoration.lineThrough,

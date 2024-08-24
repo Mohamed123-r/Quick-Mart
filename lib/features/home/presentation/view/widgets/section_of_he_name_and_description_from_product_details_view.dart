@@ -32,7 +32,7 @@ class SectionOfTheNameAndDescriptionFromProductDetailsView
                 ),
                 Column(
                   children: [
-                    Text('\$ ${dataOfProductDetails['price']}?? ' '',
+                    Text('\$ ${dataOfProductDetails['price']}',
                         style: Styles.heading3Bold),
                     Text('\$ ${dataOfProductDetails['old_price']}',
                         style: Styles.body2Regular.copyWith(
