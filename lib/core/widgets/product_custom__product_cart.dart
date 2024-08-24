@@ -26,7 +26,7 @@ class ProductCustomProductCart extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Expanded(
                     child: Text(
@@ -36,10 +36,14 @@ class ProductCustomProductCart extends StatelessWidget {
                       style: Styles.body2Medium,
                     ),
                   ),
-                  Checkbox(
-                    value: true,
-                    onChanged: (value) {},
-                    activeColor: kCyanColor,
+                  SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: Checkbox(
+                      value: true,
+                      onChanged: (value) {},
+                      activeColor: kCyanColor,
+                    ),
                   ),
                 ],
               ),
