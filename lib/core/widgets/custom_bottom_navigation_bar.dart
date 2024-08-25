@@ -6,6 +6,7 @@ import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/features/cart/presentation/view/my_cart_view.dart';
 import 'package:quick_mart/features/home/presentation/view/categories_view.dart';
 import 'package:quick_mart/features/home/presentation/view/home_view.dart';
+import 'package:quick_mart/features/wishlist/presentation/view/wishlist_view.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({
@@ -80,9 +81,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           const HomeView(),
           const CategoriesView(),
           const MyCartView(),
-          Container(
-            color: Colors.green,
-          ),
+          const WishlistView(),
           Container(
             color: Colors.purple,
           )

@@ -14,6 +14,7 @@ import 'package:quick_mart/features/home/presentation/view/sub_categories_view.d
 import 'package:quick_mart/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:quick_mart/features/search/presentation/view/search_view.dart';
 import 'package:quick_mart/features/splash/presentation/view/splash_view.dart';
+import 'package:quick_mart/features/wishlist/presentation/view/wishlist_view.dart';
 
 abstract class AppRouter {
   static const kSplash = '/';
@@ -32,6 +33,7 @@ abstract class AppRouter {
   static const kProductDetailView = '/productDetailView';
   static const kSearchProductView = '/searchProductView';
   static const kMyCartView = '/myCartView';
+  static const kWishListView = '/wishListView';
 
   static Route<Object?> router(RouteSettings settings) {
     switch (settings.name) {
@@ -107,6 +109,11 @@ abstract class AppRouter {
       case kMyCartView:
         return MaterialPageRoute(builder: (context) {
           return const MyCartView(); //replace this Scaffold with a login Screen
+        });
+
+      case kWishListView:
+        return MaterialPageRoute(builder: (context) {
+          return const WishlistView(); //replace this Scaffold with a login Screen
         });
 
       default:
