@@ -6,7 +6,9 @@ import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/product_custom_quantity.dart';
 
 class ProductCustomProductCart extends StatelessWidget {
-  const ProductCustomProductCart({super.key});
+  const ProductCustomProductCart({super.key, this.isWishlist = false});
+
+  final bool isWishlist;
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +38,17 @@ class ProductCustomProductCart extends StatelessWidget {
                       style: Styles.body2Medium,
                     ),
                   ),
-                  SizedBox(
-                    width: 24,
-                    height: 24,
-                    child: Checkbox(
-                      value: true,
-                      onChanged: (value) {},
-                      activeColor: kCyanColor,
-                    ),
-                  ),
+                  isWishlist
+                      ? const SizedBox()
+                      : SizedBox(
+                          width: 24,
+                          height: 24,
+                          child: Checkbox(
+                            value: true,
+                            onChanged: (value) {},
+                            activeColor: kCyanColor,
+                          ),
+                        ),
                 ],
               ),
               const Text(
