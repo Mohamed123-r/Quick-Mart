@@ -24,4 +24,5 @@ abstract class Assets {
       "assets/images/passwordSuccessfully-image.png";
   static String productTest = "assets/images/product_test.png";
   static String trashIcon = "assets/images/trash_icon.svg";
+  static String emptyCart = "assets/images/empty-cart.png";
 }
