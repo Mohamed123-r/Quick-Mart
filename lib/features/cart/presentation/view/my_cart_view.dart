@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/widgets/custom_app_bar.dart';
-import 'package:quick_mart/features/cart/presentation/view/widgets/my_cart_view_body.dart';
+import 'package:quick_mart/features/cart/presentation/view/widgets/my_cart_empty_body.dart';
 
 class MyCartView extends StatelessWidget {
   const MyCartView({super.key});
@@ -15,7 +15,7 @@ class MyCartView extends StatelessWidget {
         title: 'My Cart',
         isLarge: true,
       ),
-      body: const MyCartViewBody(),
+      body: const MyCartEmptyBody(),
     );
   }
 }
