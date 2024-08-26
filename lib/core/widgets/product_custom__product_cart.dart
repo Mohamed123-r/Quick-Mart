@@ -6,9 +6,11 @@ import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/product_custom_quantity.dart';
 
 class ProductCustomProductCart extends StatelessWidget {
-  const ProductCustomProductCart({super.key, this.isWishlist = false});
+  const ProductCustomProductCart(
+      {super.key, this.isWishlist = false, this.onTapGetProductDetails});
 
   final bool isWishlist;
+  final Function()? onTapGetProductDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +71,11 @@ class ProductCustomProductCart extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const ProductCustomQuantity(),
-                  SvgPicture.asset(
-                    Assets.trashIcon,
+                  GestureDetector(
+                    onTap: onTapGetProductDetails,
+                    child: SvgPicture.asset(
+                      Assets.trashIcon,
+                    ),
                   ),
                 ],
               )
