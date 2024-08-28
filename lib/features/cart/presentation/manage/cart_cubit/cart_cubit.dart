@@ -21,6 +21,9 @@ class CartCubit extends Cubit<CartState> {
 
       for (int i = 0; i < response['data']['cart_items'].length; i++) {
         dataOfCart.add(response['data']['cart_items'][i]);
+        totalPrice += response['data']['cart_items'][i]['product']['price'];
+        totalOldPrice +=
+            response['data']['cart_items'][i]['product']['old_price'];
       }
 
       emit(
@@ -36,7 +39,7 @@ class CartCubit extends Cubit<CartState> {
   addCart(int id) async {
     emit(CartLoading());
     try {
-      Map<String, dynamic> response = await api.post(EndPoint.cart, data: {
+      await api.post(EndPoint.cart, data: {
         "product_id": id,
       });
       emit(
@@ -72,3 +75,5 @@ class CartCubit extends Cubit<CartState> {
 }
 
 List<Map<String, dynamic>> dataOfCart = [];
+num totalPrice = 0;
+num totalOldPrice = 0;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/styles.dart';
+import 'package:quick_mart/features/cart/presentation/manage/cart_cubit/cart_cubit.dart';
 import 'package:quick_mart/features/cart/presentation/view/widgets/call_to_action_section_from_cart_view.dart';
 
 class CartInfoSection extends StatelessWidget {
@@ -49,7 +50,7 @@ class CartInfoSection extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "\$ 100.00",
+                  "\$ $totalOldPrice",
                   style: Styles.captionRegular.copyWith(
                     color: kGrey_150Color,
                   ),
@@ -69,7 +70,7 @@ class CartInfoSection extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "\$ 0.00",
+                  "\$ ${totalOldPrice - totalPrice}",
                   style: Styles.captionRegular.copyWith(
                     color: kGrey_150Color,
                   ),
@@ -79,15 +80,15 @@ class CartInfoSection extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Total",
                   style: Styles.body1Medium,
                 ),
                 Text(
-                  "\$ 100.00",
+                  "\$ $totalPrice",
                   style: Styles.body1Medium,
                 ),
               ],
