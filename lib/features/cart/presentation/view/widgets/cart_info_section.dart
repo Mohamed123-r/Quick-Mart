@@ -12,6 +12,7 @@ class CartItemsSection extends StatelessWidget {
   });
 
   final FToast fToast = FToast();
+
   @override
   Widget build(BuildContext context) {
     fToast.init(context);
@@ -31,13 +32,13 @@ class CartItemsSection extends StatelessWidget {
                 context: context,
                 fToast: fToast,
                 image: Assets.toastSuccessIcon,
-                title: "تم الحذف بنجاح",
+                title: "The product has been removed from your cart",
               ).showToast();
             },
             image: dataOfCart[index]['product']['image'],
             title: dataOfCart[index]['product']['name'],
             price: dataOfCart[index]['product']['price'],
-            oldPrice: dataOfCart[index]['product']['price'],
+            oldPrice: dataOfCart[index]['product']['old_price'],
           ),
         ),
       ),

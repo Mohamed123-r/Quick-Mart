@@ -44,11 +44,11 @@ class MyCartEmptyBody extends StatelessWidget {
           PrimaryBottom(
             title: 'Explore Categories',
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 AppRouter.router(
                   const RouteSettings(
-                    name: AppRouter.kCategoriesView,
+                    name: AppRouter.kBottomNavigationBar,
                   ),
                 ),
               );

@@ -39,8 +39,8 @@ class _MyCartViewState extends State<MyCartView> {
                   ),
                 )
               : dataOfCart.isEmpty
-                  ? MyCartEmptyBody()
-                  : MyCartViewBody(),
+                  ? const MyCartEmptyBody()
+                  : const MyCartViewBody(),
         );
       },
     );

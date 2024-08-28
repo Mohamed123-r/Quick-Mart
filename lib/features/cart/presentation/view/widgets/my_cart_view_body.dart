@@ -13,7 +13,7 @@ class MyCartViewBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CartItemsSection(),
-        CartInfoSection(),
+        const CartInfoSection(),
       ],
     );
   }

@@ -60,6 +60,8 @@ class CartCubit extends Cubit<CartState> {
       );
       for (int i = 0; i < dataOfCart.length; i++) {
         if (dataOfCart[i]['id'] == id) {
+          totalPrice -= dataOfCart[i]['product']['price'];
+          totalOldPrice -= dataOfCart[i]['product']['old_price'];
           dataOfCart.remove(dataOfCart[i]);
         }
       }

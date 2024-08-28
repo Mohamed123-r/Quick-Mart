@@ -10,7 +10,7 @@ class ProductCustomQuantity extends StatefulWidget {
 }
 
 class _ProductCustomQuantityState extends State<ProductCustomQuantity> {
-  int quantity = 0;
+  int quantity = 1;
 
   @override
   Widget build(BuildContext context) {
