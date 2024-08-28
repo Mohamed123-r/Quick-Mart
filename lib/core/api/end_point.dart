@@ -11,4 +11,5 @@ class EndPoint {
   static String categoriesDetails = "categories/";
   static String products = "products";
   static String productsDetails = "products/";
+  static String cart = "carts";
 }
