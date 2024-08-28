@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/api/dio_consumer.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
+import 'package:quick_mart/features/cart/presentation/manage/cart_cubit/cart_cubit.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit/categories_cubit.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/categories_details_cubit/category_details_cubit.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/home_cubit/home_cubit.dart';
@@ -38,6 +39,13 @@ class MyApp extends StatelessWidget {
               dio: Dio(),
             ),
           )..getHomeData(),
+        ),
+        BlocProvider(
+          create: (context) => CartCubit(
+            DioConsumer(
+              dio: Dio(),
+            ),
+          ),
         ),
         BlocProvider(
           create: (context) => CategoriesCubit(

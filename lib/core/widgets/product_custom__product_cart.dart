@@ -6,18 +6,32 @@ import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/product_custom_quantity.dart';
 
 class ProductCustomProductCart extends StatelessWidget {
-  const ProductCustomProductCart(
-      {super.key, this.isWishlist = false, this.onTapGetProductDetails});
+  const ProductCustomProductCart({
+    super.key,
+    this.isWishlist = false,
+    this.onTapGetProductDetails,
+    required this.image,
+    required this.title,
+    required this.price,
+    required this.oldPrice,
+  });
 
   final bool isWishlist;
   final Function()? onTapGetProductDetails;
+  final String image;
+
+  final String title;
+
+  final num price;
+
+  final num oldPrice;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(
-          Assets.productTest,
+        Image.network(
+          image,
           width: 130,
           height: 130,
         ),
@@ -32,9 +46,9 @@ class ProductCustomProductCart extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      "Product Name mind mdinfon asokmcoisn nmsikocni smondoi fddr fd dc",
+                      title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.body2Medium,
@@ -53,12 +67,12 @@ class ProductCustomProductCart extends StatelessWidget {
                         ),
                 ],
               ),
-              const Text(
-                "\$ 19.99",
+              Text(
+                "\$ ${price.toString()}",
                 style: Styles.captionSemiBold,
               ),
               Text(
-                "\$ 19.99",
+                "\$ ${oldPrice.toString()}",
                 style: Styles.overLineRegular.copyWith(
                   color: kGrey_150Color,
                   decoration: TextDecoration.lineThrough,
