@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/custom_buttons.dart';
@@ -42,7 +43,16 @@ class MyCartEmptyBody extends StatelessWidget {
           ),
           PrimaryBottom(
             title: 'Explore Categories',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                AppRouter.router(
+                  const RouteSettings(
+                    name: AppRouter.kCategoriesView,
+                  ),
+                ),
+              );
+            },
           ),
         ],
       ),
