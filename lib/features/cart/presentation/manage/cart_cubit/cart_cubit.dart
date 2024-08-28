@@ -33,6 +33,22 @@ class CartCubit extends Cubit<CartState> {
     }
   }
 
+  addCart(int id) async {
+    emit(CartLoading());
+    try {
+      Map<String, dynamic> response = await api.post(EndPoint.cart, data: {
+        "product_id": id,
+      });
+      emit(
+        CartSuccess(),
+      );
+    } on ServerException catch (e) {
+      emit(
+        CartFailure(e.errorModel.message!),
+      );
+    }
+  }
+
   deleteCart(int id) async {
     emit(CartLoading());
     try {
