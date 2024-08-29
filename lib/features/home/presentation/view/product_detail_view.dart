@@ -26,7 +26,9 @@ class ProductDetailView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         actions: const [
-          ProductCustomWishlist(),
+          ProductCustomWishlist(
+            index: 20,
+          ),
           SizedBox(width: 16),
         ],
       ),

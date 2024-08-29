@@ -61,10 +61,14 @@ class ProductCustomProduct extends StatelessWidget {
                 ),
               ),
             ),
-            const Positioned(
+            Positioned(
               top: 8,
               right: 8,
-              child: ProductCustomWishlist(),
+              child: GestureDetector(
+                child: ProductCustomWishlist(
+                  index: index,
+                ),
+              ),
             ),
           ]),
           const SizedBox(height: 8),
