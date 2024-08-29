@@ -14,4 +14,5 @@ class EndPoint {
   static String cart = "carts";
   static String detailCart = "carts/";
   static String favorites = "favorites";
+  static String detailFavorites = "favorites/";
 }

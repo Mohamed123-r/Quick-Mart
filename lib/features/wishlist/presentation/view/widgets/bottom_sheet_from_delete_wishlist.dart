@@ -4,7 +4,10 @@ import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/custom_buttons.dart';
 
 class BottomSheetFromDeleteWishlist extends StatelessWidget {
-  const BottomSheetFromDeleteWishlist({super.key});
+  const BottomSheetFromDeleteWishlist(
+      {super.key, required this.onPressedFromDelete});
+
+  final Function() onPressedFromDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,7 @@ class BottomSheetFromDeleteWishlist extends StatelessWidget {
           ),
           PrimaryBottom(
             title: 'Delete (1) product',
-            onPressed: () {},
+            onPressed: onPressedFromDelete,
           ),
           const SizedBox(
             height: 12.0,

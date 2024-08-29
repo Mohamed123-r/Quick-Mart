@@ -53,7 +53,7 @@ class WishlistCubit extends Cubit<WishlistState> {
     emit(WishlistLoading());
     try {
       await api.delete(
-        EndPoint.favorites + id.toString(),
+        EndPoint.detailFavorites + id.toString(),
       );
       for (int i = 0; i < dataOfWishlist.length; i++) {
         if (dataOfWishlist[i]['id'] == id) {

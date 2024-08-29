@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/core/widgets/product_custom__product_cart.dart';
 import 'package:quick_mart/features/wishlist/presentation/manage/wishlist_cubit/wishlist_cubit.dart';
 import 'package:quick_mart/features/wishlist/presentation/view/widgets/bottom_sheet_from_delete_wishlist.dart';
@@ -20,7 +21,13 @@ class WishlistViewBody extends StatelessWidget {
           onTapGetProductDetails: () {
             showModalBottomSheet(
               context: context,
-              builder: (context) => const BottomSheetFromDeleteWishlist(),
+              builder: (context) => BottomSheetFromDeleteWishlist(
+                onPressedFromDelete: () {
+                  Navigator.pop(context);
+                  BlocProvider.of<WishlistCubit>(context)
+                      .deleteWishlist(dataOfWishlist[index]['id']);
+                },
+              ),
             );
           },
           image: dataOfWishlist[index]['product']['image'],
