@@ -11,6 +11,7 @@ import 'package:quick_mart/features/home/presentation/manage/cubits/categories_d
 import 'package:quick_mart/features/home/presentation/manage/cubits/home_cubit/home_cubit.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/product_details_cubit/product_details_cubit.dart';
 import 'package:quick_mart/features/splash/presentation/view/splash_view.dart';
+import 'package:quick_mart/features/wishlist/presentation/manage/wishlist_cubit/wishlist_cubit.dart';
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
@@ -42,6 +43,13 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => CartCubit(
+            DioConsumer(
+              dio: Dio(),
+            ),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => WishlistCubit(
             DioConsumer(
               dio: Dio(),
             ),
