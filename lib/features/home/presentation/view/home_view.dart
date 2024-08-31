@@ -38,7 +38,16 @@ class HomeView extends StatelessWidget {
             width: 12,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                AppRouter.router(
+                  const RouteSettings(
+                    name: AppRouter.kAccountView,
+                  ),
+                ),
+              );
+            },
             child: SvgPicture.asset(
               Assets.profileIcon,
               color: kBlackColor,
