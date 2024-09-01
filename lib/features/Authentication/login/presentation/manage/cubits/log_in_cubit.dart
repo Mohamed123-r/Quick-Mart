@@ -31,6 +31,8 @@ class LogInCubit extends Cubit<LogInState> {
         CacheHelper()
             .saveData(key: ApiKeys.email, value: logInModel?.data?.email);
         CacheHelper()
+            .saveData(key: ApiKeys.username, value: logInModel?.data?.username);
+        CacheHelper()
             .saveData(key: ApiKeys.token, value: logInModel?.data?.token);
         CacheHelper().saveData(key: ApiKeys.id, value: logInModel?.data?.id);
       } else {
