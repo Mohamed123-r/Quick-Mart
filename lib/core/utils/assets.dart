@@ -21,6 +21,9 @@ abstract class Assets {
   static const String termsAndConditionsIcon =
       'assets/images/terms-and-conditions-icon.svg';
   static const String faqsIcon = 'assets/images/faqs-icon.svg';
+  static const String darkThemeIcon = 'assets/images/dark_theme-icon.svg';
+  static const String changePasswordIcon =
+      'assets/images/change-password-icon.svg';
   static String splashImage = "assets/images/splash-image.png";
   static String onboarding1 = "assets/images/onboarding1.png";
   static String onboarding2 = "assets/images/onboarding2.png";
