@@ -16,6 +16,11 @@ abstract class Assets {
   static String shippingAddressIcon = "assets/images/shipping-address-icon.svg";
   static String orderHistoryIcon = "assets/images/order-history-icon.svg";
   static String paymentMethodIcon = "assets/images/payment-method-icon.svg";
+  static const String privacyPolicyIcon =
+      'assets/images/privacy-policy-icon.svg';
+  static const String termsAndConditionsIcon =
+      'assets/images/terms-and-conditions-icon.svg';
+  static const String faqsIcon = 'assets/images/faqs-icon.svg';
   static String splashImage = "assets/images/splash-image.png";
   static String onboarding1 = "assets/images/onboarding1.png";
   static String onboarding2 = "assets/images/onboarding2.png";
