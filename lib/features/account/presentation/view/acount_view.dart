@@ -5,6 +5,7 @@ import 'package:quick_mart/core/api/api_keys.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
+import 'package:quick_mart/features/account/presentation/view/widgets/account_view_body.dart';
 
 class AccountView extends StatelessWidget {
   const AccountView({super.key});
@@ -52,7 +53,7 @@ class AccountView extends StatelessWidget {
           )
         ],
       ),
-      body: Container(),
+      body: const AccountViewBody(),
     );
   }
 }
