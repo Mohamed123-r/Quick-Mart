@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/features/account/presentation/view/widgets/account_item_list.dart';
@@ -26,7 +27,16 @@ class PersonalInformationSectionFromAccountView extends StatelessWidget {
         AccountItemList(
           title: 'Shipping Address',
           iconLeading: Assets.shippingAddressIcon,
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              AppRouter.router(
+                const RouteSettings(
+                  name: AppRouter.kShippingAddressView,
+                ),
+              ),
+            );
+          },
         ),
         AccountItemList(
           title: 'Payment Method',

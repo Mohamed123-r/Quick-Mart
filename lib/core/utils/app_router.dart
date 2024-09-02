@@ -6,6 +6,7 @@ import 'package:quick_mart/features/Authentication/login/presentation/view/passw
 import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_email_verification.dart';
 import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_view.dart';
 import 'package:quick_mart/features/account/presentation/view/acount_view.dart';
+import 'package:quick_mart/features/account/presentation/view/shipping_address_view.dart';
 import 'package:quick_mart/features/cart/presentation/view/my_cart_view.dart';
 import 'package:quick_mart/features/home/presentation/view/categories_view.dart';
 import 'package:quick_mart/features/home/presentation/view/home_view.dart';
@@ -36,6 +37,7 @@ abstract class AppRouter {
   static const kMyCartView = '/myCartView';
   static const kWishListView = '/wishListView';
   static const kAccountView = '/accountView';
+  static const kShippingAddressView = '/shippingAddressView';
 
   static Route<Object?> router(RouteSettings settings) {
     switch (settings.name) {
@@ -121,6 +123,11 @@ abstract class AppRouter {
       case kAccountView:
         return MaterialPageRoute(builder: (context) {
           return const AccountView(); //replace this Scaffold with a login Screen
+        });
+
+      case kShippingAddressView:
+        return MaterialPageRoute(builder: (context) {
+          return const ShippingAddressView(); //replace this Scaffold with a login Screen
         });
 
       default:

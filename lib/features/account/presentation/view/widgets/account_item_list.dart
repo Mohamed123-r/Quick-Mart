@@ -18,11 +18,11 @@ class AccountItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        children: [
-          ListTile(
+    return Column(
+      children: [
+        InkWell(
+          onTap: onTap,
+          child: ListTile(
             title: Text(
               title,
               style: Styles.body2Medium.copyWith(color: kGrey_150Color),
@@ -31,15 +31,15 @@ class AccountItemList extends StatelessWidget {
             trailing: trailing ??
                 const Icon(
                   Icons.chevron_right,
-              color: kGrey_150Color,
-            ),
+                  color: kGrey_150Color,
+                ),
           ),
-          const Divider(
-            height: 0,
-            color: kGrey_50Color,
-          ),
-        ],
-      ),
+        ),
+        const Divider(
+          height: 0,
+          color: kGrey_50Color,
+        ),
+      ],
     );
   }
 }
