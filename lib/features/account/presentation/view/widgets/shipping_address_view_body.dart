@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:quick_mart/core/function/validator.dart';
+import 'package:quick_mart/core/widgets/custom_buttons.dart';
 import 'package:quick_mart/core/widgets/custom_country.dart';
 import 'package:quick_mart/core/widgets/custom_dropdawn.dart';
 import 'package:quick_mart/core/widgets/custom_input_field.dart';
@@ -11,39 +12,49 @@ class ShippingAddressViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
-            CustomInputField(
+            const CustomInputField(
               hintText: 'Enter your Full Name',
               title: 'Full Name',
               validator: validatorOfName,
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
-            CustomCountry(title: 'Phone Number'),
-            SizedBox(
+            const CustomCountry(title: 'Phone Number'),
+            const SizedBox(
               height: 12,
             ),
-            CustomDropDawn(),
-            SizedBox(
+            const CustomDropDawn(),
+            const SizedBox(
               height: 12,
             ),
-            CustomInputField(
+            const CustomInputField(
                 hintText: 'Enter street address', title: 'Street Address '),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
-            CustomInputField(
+            const CustomInputField(
               hintText: 'Enter postal code',
               title: 'Postal Code',
               keyboardType: TextInputType.number,
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            PrimaryBottom(
+              title: 'Save',
+              onPressed: () {},
+            ),
+            const SizedBox(
+              height: 12,
             ),
           ],
         ),
