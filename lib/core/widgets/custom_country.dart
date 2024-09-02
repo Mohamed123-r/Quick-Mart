@@ -29,7 +29,24 @@ class _PhoneInputPageState extends State<CustomCountry> {
       CountrySelectorNavigator.dropdown(
         showSearchInput: true,
         searchInputDecoration: InputDecoration(
-          border: InputBorder.none,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: const BorderSide(
+              color: kGrey_50Color,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: const BorderSide(
+              color: kGrey_50Color,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: const BorderSide(
+              color: kCyanColor,
+            ),
+          ),
           contentPadding: const EdgeInsets.symmetric(
             vertical: 16,
           ),
@@ -45,7 +62,7 @@ class _PhoneInputPageState extends State<CustomCountry> {
           hintText: 'Search for country',
           hintStyle: Styles.captionRegular,
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         borderRadius: BorderRadius.circular(12),
         flagShape: BoxShape.rectangle,
         layerLink: layerLink,
