@@ -43,11 +43,11 @@ class PersonalInformationSectionFromAccountView extends StatelessWidget {
           iconLeading: Assets.paymentMethodIcon,
           onTap: () {},
         ),
-        AccountItemList(
-          title: 'Order History',
-          iconLeading: Assets.orderHistoryIcon,
-          onTap: () {},
-        ),
+        // AccountItemList(
+        //   title: 'Order History',
+        //   iconLeading: Assets.orderHistoryIcon,
+        //   onTap: () {},
+        // ),
       ],
     );
   }
