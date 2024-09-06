@@ -32,7 +32,16 @@ class SupportAndInformationSectionFromAccountView extends StatelessWidget {
         AccountItemList(
           title: 'Terms & Conditions',
           iconLeading: Assets.termsAndConditionsIcon,
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              AppRouter.router(
+                const RouteSettings(
+                  name: AppRouter.kTermsAndConditions,
+                ),
+              ),
+            );
+          },
         ),
         AccountItemList(
           title: 'FAQs',
