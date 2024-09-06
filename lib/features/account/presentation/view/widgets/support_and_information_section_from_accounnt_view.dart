@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/features/account/presentation/view/widgets/account_item_list.dart';
@@ -36,7 +37,16 @@ class SupportAndInformationSectionFromAccountView extends StatelessWidget {
         AccountItemList(
           title: 'FAQs',
           iconLeading: Assets.faqsIcon,
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              AppRouter.router(
+                const RouteSettings(
+                  name: AppRouter.kFAQsView,
+                ),
+              ),
+            );
+          },
         ),
       ],
     );
