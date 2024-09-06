@@ -7,6 +7,7 @@ import 'package:quick_mart/features/Authentication/signup/presentation/view/sign
 import 'package:quick_mart/features/Authentication/signup/presentation/view/sign_up_view.dart';
 import 'package:quick_mart/features/account/presentation/view/FAQs_view.dart';
 import 'package:quick_mart/features/account/presentation/view/acount_view.dart';
+import 'package:quick_mart/features/account/presentation/view/privacy_policy_view.dart';
 import 'package:quick_mart/features/account/presentation/view/shipping_address_view.dart';
 import 'package:quick_mart/features/account/presentation/view/terms_and_conditions.dart';
 import 'package:quick_mart/features/cart/presentation/view/my_cart_view.dart';
@@ -42,6 +43,7 @@ abstract class AppRouter {
   static const kShippingAddressView = '/shippingAddressView';
   static const kFAQsView = '/FAQsView';
   static const kTermsAndConditions = '/termsAndConditions';
+  static const kPrivacyPolicy = '/privacyPolicy';
 
   static Route<Object?> router(RouteSettings settings) {
     switch (settings.name) {
@@ -142,6 +144,11 @@ abstract class AppRouter {
       case kTermsAndConditions:
         return MaterialPageRoute(builder: (context) {
           return const TermsAndConditions(); //replace this Scaffold with a login Screen
+        });
+
+      case kPrivacyPolicy:
+        return MaterialPageRoute(builder: (context) {
+          return const PrivacyPolicyView(); //replace this Scaffold with a login Screen
         });
 
       default:

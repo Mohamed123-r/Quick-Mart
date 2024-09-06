@@ -27,7 +27,16 @@ class SupportAndInformationSectionFromAccountView extends StatelessWidget {
         AccountItemList(
           title: 'Privacy Policy',
           iconLeading: Assets.privacyPolicyIcon,
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              AppRouter.router(
+                const RouteSettings(
+                  name: AppRouter.kPrivacyPolicy,
+                ),
+              ),
+            );
+          },
         ),
         AccountItemList(
           title: 'Terms & Conditions',
