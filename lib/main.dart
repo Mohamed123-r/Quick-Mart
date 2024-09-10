@@ -2,7 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:quick_mart/constants.dart';
+import 'package:quick_mart/core/api/api_keys_from_strip.dart';
 import 'package:quick_mart/core/api/dio_consumer.dart';
 import 'package:quick_mart/core/database/cache/cache_helper.dart';
 import 'package:quick_mart/features/cart/presentation/manage/cart_cubit/cart_cubit.dart';
@@ -14,6 +16,7 @@ import 'package:quick_mart/features/splash/presentation/view/splash_view.dart';
 import 'package:quick_mart/features/wishlist/presentation/manage/wishlist_cubit/wishlist_cubit.dart';
 
 Future<void> main() async {
+  Stripe.publishableKey = ApiKeysFromStrip.publishableKey;
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       systemNavigationBarColor: kWhiteColor, // navigation bar color
