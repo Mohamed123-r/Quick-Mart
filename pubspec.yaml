@@ -46,7 +46,12 @@ dependencies:
   carousel_slider: ^4.2.1
   readmore: ^3.0.0
   country_state_city_pro: ^0.0.6
-
+  flutter_stripe: ^10.2.0
+  dartz: ^0.10.1
+  font_awesome_flutter: ^10.7.0
+  flutter_paypal_payment: ^1.0.6
+  flutter_inappwebview: ^5.8.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
