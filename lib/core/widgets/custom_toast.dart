@@ -41,6 +41,8 @@ class CustomToast {
             ),
             Text(
               title,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.end,
               style: Styles.captionSemiBold,
             ),

@@ -27,7 +27,7 @@ class ProductListingViewBody extends StatelessWidget {
                   onTap: () {},
                   child: GridView.count(
                     crossAxisCount: 2,
-                    childAspectRatio: 160 / 230,
+                    childAspectRatio: 0.64,
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
                     children: List.generate(

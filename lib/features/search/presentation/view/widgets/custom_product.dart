@@ -23,7 +23,7 @@ class CustomProductGridView extends StatelessWidget {
               itemCount: productsList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 0.7,
+                childAspectRatio: 0.65,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
               ),

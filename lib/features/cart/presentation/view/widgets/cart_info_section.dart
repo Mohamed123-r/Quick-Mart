@@ -32,7 +32,7 @@ class CartItemsSection extends StatelessWidget {
                 context: context,
                 fToast: fToast,
                 image: Assets.toastSuccessIcon,
-                title: "The product has been removed from your cart",
+                title: "The product has been removed ",
               ).showToast();
             },
             image: dataOfCart[index]['product']['image'],
