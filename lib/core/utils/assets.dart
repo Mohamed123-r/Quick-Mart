@@ -38,4 +38,5 @@ abstract class Assets {
   static String trashIcon = "assets/images/trash_icon.svg";
   static String emptyCart = "assets/images/empty-cart.png";
   static String emptyWishlist = "assets/images/empty-wishlist.png";
+  static String paymentSucessful = "assets/images/payment_sucessful.png";
 }
