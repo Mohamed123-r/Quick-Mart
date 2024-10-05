@@ -43,7 +43,7 @@ dependencies:
   easy_splash_screen: ^1.0.4
   fluttertoast: ^8.2.6
   flutter_bloc: ^8.1.6
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
   readmore: ^3.0.0
   country_state_city_pro: ^0.0.6
   flutter_stripe: ^10.2.0
