@@ -51,7 +51,15 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   flutter_paypal_payment: ^1.0.6
   flutter_inappwebview: ^5.8.0
-  
+  icons_launcher: ^3.0.0
+
+icons_launcher:
+  image_path: "assets/images/shop.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -62,6 +70,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

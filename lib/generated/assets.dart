@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsImagesEmptyCart = 'assets/images/empty_cart.png';
   static const String imagesArrow = 'assets/images/Arrow.svg';
   static const String imagesCart = 'assets/images/cart.svg';
   static const String imagesCategory2Icon = 'assets/images/category2_icon.svg';
@@ -39,6 +40,7 @@ class Assets {
   static const String imagesSearchNormal = 'assets/images/search-normal.svg';
   static const String imagesShippingAddressIcon =
       'assets/images/shipping-address-icon.svg';
+  static const String imagesShop = 'assets/images/shop.png';
   static const String imagesShoppingCart2Icon =
       'assets/images/shopping-cart2_icon.svg';
   static const String imagesShoppingCartIcon =
