@@ -2,7 +2,6 @@
 class Assets {
   Assets._();
 
-  static const String assetsImagesEmptyCart = 'assets/images/empty_cart.png';
   static const String imagesArrow = 'assets/images/Arrow.svg';
   static const String imagesCart = 'assets/images/cart.svg';
   static const String imagesCategory2Icon = 'assets/images/category2_icon.svg';
@@ -34,7 +33,6 @@ class Assets {
   static const String imagesPaypal = 'assets/images/paypal.svg';
   static const String imagesPrivacyPolicyIcon =
       'assets/images/privacy-policy-icon.svg';
-  static const String imagesProductTest = 'assets/images/product_test.png';
   static const String imagesProfile2Icon = 'assets/images/profile2-icon.svg';
   static const String imagesProfileIcon = 'assets/images/profile_icon.svg';
   static const String imagesSearchNormal = 'assets/images/search-normal.svg';
