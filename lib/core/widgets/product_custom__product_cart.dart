@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quick_mart/constants.dart';
@@ -30,10 +31,14 @@ class ProductCustomProductCart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.network(
-          image,
+        CachedNetworkImage(
           width: 130,
           height: 130,
+          imageUrl: image,
+          errorWidget: (_, __, ___) => const Icon(
+            Icons.error,
+          ),
+          fit: BoxFit.fill,
         ),
         const SizedBox(
           width: 8,

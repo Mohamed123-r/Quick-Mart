@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/constants.dart';
@@ -34,9 +35,12 @@ class ProductDetailViewBody extends StatelessWidget {
                         for (int i = 0;
                             i < dataOfProductDetails['images'].length;
                             i++)
-                          Image.network(
-                            dataOfProductDetails['images'][i],
-                            // fit: BoxFit.fill,
+                          CachedNetworkImage(
+                            width: MediaQuery.of(context).size.width,
+                            imageUrl: dataOfProductDetails['images'][i],
+                            errorWidget: (_, __, ___) => const Icon(
+                              Icons.error,
+                            ),
                           ),
                       ],
                     ),

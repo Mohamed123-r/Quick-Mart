@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/styles.dart';
@@ -32,10 +32,14 @@ class ProductCustomCategory extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.network(
-              icon,
+            CachedNetworkImage(
               height: isSmall ? 30 : 60,
               width: isSmall ? 40 : 80,
+              imageUrl: icon,
+              errorWidget: (_, __, ___) => const Icon(
+                Icons.error,
+              ),
+              fit: BoxFit.fill,
             ),
             const SizedBox(
               height: 8,

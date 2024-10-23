@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/styles.dart';
@@ -38,9 +39,12 @@ class ProductCustomProduct extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24),
               ),
               child: Center(
-                child: Image.network(
-                  image,
+                child: CachedNetworkImage(
                   height: 150,
+                  imageUrl: image,
+                  errorWidget: (_, __, ___) => const Icon(
+                    Icons.error,
+                  ),
                   fit: BoxFit.fill,
                 ),
               ),
