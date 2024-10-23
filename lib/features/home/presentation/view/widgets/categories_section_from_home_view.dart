@@ -4,6 +4,7 @@ import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/product_custom_category.dart';
+import 'package:quick_mart/core/widgets/product_custom_category_loading.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/categories_cubit/categories_cubit.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/categories_details_cubit/category_details_cubit.dart';
 
@@ -42,12 +43,21 @@ class CategoriesSectionFromHomeView extends StatelessWidget {
               height: 12,
             ),
             if (state is CategoriesLoading)
-              const SizedBox(
+              SizedBox(
                 height: 60,
-                child: Center(
-                  child: CircularProgressIndicator(
-                    color: kCyanColor,
-                  ),
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: (BuildContext context, int index) {
+                    return const SizedBox(
+                      width: 2,
+                    );
+                  },
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    return const ProductCustomCategoryLoading(
+                      isSmall: true,
+                    );
+                  },
                 ),
               )
             else
