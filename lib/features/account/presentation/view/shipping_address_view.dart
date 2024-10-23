@@ -15,7 +15,7 @@ class ShippingAddressView extends StatelessWidget {
         isLarge: true,
         title: 'Shipping Address',
       ),
-      body: const ShippingAddressViewBody(),
+      body: ShippingAddressViewBody(),
     );
   }
 }

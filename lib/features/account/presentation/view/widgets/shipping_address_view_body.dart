@@ -1,17 +1,23 @@
 import 'package:flutter/cupertino.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:quick_mart/core/function/validator.dart';
+import 'package:quick_mart/core/utils/assets.dart';
 import 'package:quick_mart/core/widgets/custom_buttons.dart';
 import 'package:quick_mart/core/widgets/custom_country.dart';
 import 'package:quick_mart/core/widgets/custom_dropdawn.dart';
 import 'package:quick_mart/core/widgets/custom_input_field.dart';
+import 'package:quick_mart/core/widgets/custom_toast.dart';
 
 class ShippingAddressViewBody extends StatelessWidget {
-  const ShippingAddressViewBody({
+  ShippingAddressViewBody({
     super.key,
   });
 
+  final FToast fToast = FToast();
+
   @override
   Widget build(BuildContext context) {
+    fToast.init(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: SingleChildScrollView(
@@ -51,7 +57,15 @@ class ShippingAddressViewBody extends StatelessWidget {
             ),
             PrimaryBottom(
               title: 'Save',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+                CustomToast(
+                  context: context,
+                  fToast: fToast,
+                  image: Assets.toastSuccessIcon,
+                  title: "Your address has been saved",
+                ).showToast();
+              },
             ),
             const SizedBox(
               height: 12,
