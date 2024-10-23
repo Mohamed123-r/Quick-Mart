@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/core/widgets/custom_buttons.dart';
+import 'package:quick_mart/features/cart/presentation/manage/cart_cubit/cart_cubit.dart';
 
 import '../../../data/models/payment_intent_input_model.dart';
 import '../../manage/payment_cubit.dart';
@@ -36,7 +37,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           onPressed: () {
             context.read<PaymentCubit>().makePayment(
                   paymentIntentInputModel: PaymentIntentInputModel(
-                    amount: "1099",
+                    amount: totalPrice.toString(),
                     currency: 'usd',
                   ),
                 );

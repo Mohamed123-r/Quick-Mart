@@ -28,6 +28,7 @@ class CartItemsSection extends StatelessWidget {
             onTapGetProductDetails: () {
               BlocProvider.of<CartCubit>(context)
                   .deleteCart(dataOfCart[index]['id']);
+              
               CustomToast(
                 context: context,
                 fToast: fToast,
