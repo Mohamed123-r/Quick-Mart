@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/widgets/custom_app_bar.dart';
+import 'package:quick_mart/core/widgets/custom_my_cart_loading.dart';
 import 'package:quick_mart/features/cart/presentation/manage/cart_cubit/cart_cubit.dart';
 import 'package:quick_mart/features/cart/presentation/view/widgets/my_cart_empty_body.dart';
 import 'package:quick_mart/features/cart/presentation/view/widgets/my_cart_view_body.dart';
@@ -33,11 +34,7 @@ class _MyCartViewState extends State<MyCartView> {
             isLarge: true,
           ),
           body: state is CartLoading
-              ? const Center(
-                  child: CircularProgressIndicator(
-                    color: kCyanColor,
-                  ),
-                )
+              ? const CustomMyCartLoading()
               : dataOfCart.isEmpty
                   ? const MyCartEmptyBody()
                   : const MyCartViewBody(),

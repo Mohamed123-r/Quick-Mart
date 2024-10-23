@@ -10,6 +10,7 @@ class ProductCustomProductCart extends StatelessWidget {
   const ProductCustomProductCart({
     super.key,
     this.isWishlist = false,
+    this.isLoading = false,
     this.onTapGetProductDetails,
     required this.image,
     required this.title,
@@ -18,6 +19,7 @@ class ProductCustomProductCart extends StatelessWidget {
   });
 
   final bool isWishlist;
+  final bool isLoading;
   final Function()? onTapGetProductDetails;
   final String image;
 
@@ -90,12 +92,14 @@ class ProductCustomProductCart extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const ProductCustomQuantity(),
-                  GestureDetector(
-                    onTap: onTapGetProductDetails,
-                    child: SvgPicture.asset(
-                      Assets.trashIcon,
-                    ),
-                  ),
+                  isLoading
+                      ? const Icon(Icons.restore_from_trash)
+                      : GestureDetector(
+                          onTap: onTapGetProductDetails,
+                          child: SvgPicture.asset(
+                            Assets.trashIcon,
+                          ),
+                        ),
                 ],
               )
             ],
