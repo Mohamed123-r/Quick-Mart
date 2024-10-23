@@ -12,8 +12,10 @@ class ProductCustomProduct extends StatelessWidget {
       required this.price,
       required this.oldPrice,
       required this.index,
-      required this.onTapGetProductDetails});
+      required this.onTapGetProductDetails,
+      this.isLoading = false});
 
+  final bool isLoading;
   final String image;
 
   final String title;
@@ -49,8 +51,10 @@ class ProductCustomProduct extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              top: 8,
+            isLoading
+                ? const SizedBox()
+                : Positioned(
+                    top: 8,
               right: 8,
               child: GestureDetector(
                 child: ProductCustomWishlist(

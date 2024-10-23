@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/utils/app_router.dart';
 import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/product_custom_product.dart';
+import 'package:quick_mart/core/widgets/product_custom_product_loading.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/home_cubit/home_cubit.dart';
 import 'package:quick_mart/features/home/presentation/manage/cubits/product_details_cubit/product_details_cubit.dart';
 
@@ -31,14 +31,7 @@ class ProductsSectionFromHomeView extends StatelessWidget {
               height: 12,
             ),
             if (state is HomeLoading)
-              const SizedBox(
-                height: 200,
-                child: Center(
-                  child: CircularProgressIndicator(
-                    color: kCyanColor,
-                  ),
-                ),
-              )
+              const ProductCustomProductLoading()
             else
               GridView.count(
                 shrinkWrap: true,
