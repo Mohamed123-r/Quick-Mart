@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/widgets/custom_app_bar.dart';
+import 'package:quick_mart/core/widgets/custom_wishlist_loading.dart';
 import 'package:quick_mart/features/wishlist/presentation/manage/wishlist_cubit/wishlist_cubit.dart';
 import 'package:quick_mart/features/wishlist/presentation/view/widgets/wishlist_empty_body.dart';
 import 'package:quick_mart/features/wishlist/presentation/view/widgets/wishlist_view_body.dart';
@@ -33,11 +33,7 @@ class _WishlistViewState extends State<WishlistView> {
             title: 'Wishlist',
           ),
           body: state is WishlistLoading
-              ? const Center(
-                  child: CircularProgressIndicator(
-                    color: kCyanColor,
-                  ),
-                )
+              ? const CustomWishlistLoading()
               : dataOfWishlist.isEmpty
                   ? const WishlistEmptyBody()
                   : const WishlistViewBody(),
