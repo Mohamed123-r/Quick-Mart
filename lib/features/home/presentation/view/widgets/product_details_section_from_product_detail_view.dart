@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/function/random_list.dart';
+import 'package:quick_mart/core/utils/styles.dart';
 import 'package:quick_mart/core/widgets/custom_badge.dart';
 import 'package:quick_mart/features/home/presentation/view/widgets/section_of_he_name_and_description_from_product_details_view.dart';
 import 'package:quick_mart/features/home/presentation/view/widgets/section_of_the_color_and_quantity_from_product_details_view.dart';
@@ -7,8 +9,10 @@ import 'package:quick_mart/features/home/presentation/view/widgets/section_of_th
 class ProductDetailsSectionFromProductDetailView extends StatelessWidget {
   ProductDetailsSectionFromProductDetailView({
     super.key,
+    this.isLoading = false,
   });
 
+  final bool isLoading;
   final List<Widget> answerdList = [
     const TopRated(),
     const SaleOff(),
@@ -41,15 +45,47 @@ class ProductDetailsSectionFromProductDetailView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                answerdList.randomItem(),
-                const SizedBox(
-                  width: 8,
-                ),
-                answerdList.randomItem(),
-              ],
-            ),
+            isLoading
+                ? Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: kGrey_100Color,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          "Top Rated",
+                          style: Styles.overLineSemiBold
+                              .copyWith(color: kWhiteColor),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: kGrey_100Color,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          "Top Rated",
+                          style: Styles.overLineSemiBold
+                              .copyWith(color: kWhiteColor),
+                        ),
+                      ),
+                    ],
+                  )
+                : Row(
+                    children: [
+                      answerdList.randomItem(),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      answerdList.randomItem(),
+                    ],
+                  ),
             const SizedBox(
               height: 12,
             ),
