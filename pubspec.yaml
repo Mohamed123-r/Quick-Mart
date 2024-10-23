@@ -52,6 +52,7 @@ dependencies:
   flutter_paypal_payment: ^1.0.6
   flutter_inappwebview: ^5.8.0
   icons_launcher: ^3.0.0
+  cached_network_image: ^3.4.1
 
 icons_launcher:
   image_path: "assets/images/shop.png"

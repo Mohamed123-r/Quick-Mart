@@ -1,5 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:quick_mart/constants.dart';
 import 'package:quick_mart/core/widgets/product_custom_banner.dart';
 
 class BannerSectionFromHomeView extends StatefulWidget {
@@ -25,14 +25,15 @@ class _BannerSectionFromHomeViewState extends State<BannerSectionFromHomeView> {
     return ProductCustomBanner(
       items: [
         for (var item in items)
-          Container(
-            decoration: BoxDecoration(
-              color: kGrey_50Color,
-              borderRadius: BorderRadius.circular(24),
-              image: DecorationImage(
-                image: NetworkImage(item),
-                fit: BoxFit.fill,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(24),
+            child: CachedNetworkImage(
+              width: MediaQuery.of(context).size.width,
+              imageUrl: item,
+              errorWidget: (_, __, ___) => const Icon(
+                Icons.error,
               ),
+              fit: BoxFit.fill,
             ),
           ),
       ],
